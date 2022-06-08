@@ -1,0 +1,35 @@
+h1{
+    font-size: 65px;
+    color: orange;
+    font-family: sans-serif;
+    text-align: center;
+    text-decoration:  underline;
+}
+/*
+ul{
+    background-color: rgb(247, 217, 216);
+}
+*/
+.bg-color{
+    background-color: rgb(247, 217, 216);
+}
+li{
+    font-style: italic;
+    line-height: 35px;
+}
+p{
+    font-weight: 600;
+    font-size: 3em;
+}
+body{
+    font-size: 16px;
+}
+#vermelho{
+    background-color: red;
+}
+#amarelo{
+    background-color: yellow;
+}
+#marrom{
+    background-color: rgb(92, 70, 70);
+}
