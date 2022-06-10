@@ -1,0 +1,54 @@
+ol li {
+    background-color: yellow;
+}
+
+ol li.par{
+    color: green;
+}
+
+ol li.impar{
+    text-transform: uppercase;
+}
+.header{
+    color: red;
+}
+
+.header em{
+    font-size: 40px;
+    border: 1px solid black;
+}
+
+li {
+    font-size: 20px;
+}
+
+li em{
+    font-weight: bold;
+}
+ul li.podio{
+    color: blue;
+}
+
+.java{
+    background-color: pink;
+}
+
+
+#aliados li:hover{
+    font-weight: bold;
+}
+#aliados li#stack a:hover{
+    color: orange;
+}
+#aliados li#w3s a:hover{
+    color: green;
+}
+#aliados li#mdn a:hover{
+    color: black;
+}
+#aliados li#dd a:hover{
+    color: yellow;
+}
+#aliados li#trybe a:hover{
+    color: green;
+}
