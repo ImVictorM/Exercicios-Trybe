@@ -1,3 +1,6 @@
+body{
+    background-color: rgb(201, 231, 201);
+}
 header{
     border: 3px solid rgb(184, 176, 176);
     background-color: green;
@@ -30,11 +33,29 @@ header{
     margin-right: auto;
     background-color: rgb(219, 193, 145);
 }
-.artigo{
-   
-    width: 70%;
-    margin: auto;
+#sobre{
+    margin-left: 14%;
     background-color: rgb(248, 243, 237);
+    border: 3px solid red;
+    width: 70%;
+    position: relative;
+    z-index: 1;
+    height: 60%;
+    height: auto;
+
+}
+.artigo #sobre aside{
+    border: 3px solid red;
+    position: absolute;
+    z-index: 2;
+    right: 3%;
+    top: 22%;
+    display: inline-block;
+    width: 40%;
+
+}
+#sobre #left-content {
+    width: 50%;
 }
 .artigo h2{
     text-align: center;
@@ -44,5 +65,42 @@ header{
     font-size: 25px;
     margin-left: 20px;
     margin-right: 20px;
-
+}
+#tab{
+    text-align: center;
+    font-family: monospace;
+    font-size: 15px;
+}
+#tab ul{
+    list-style-type: none;
+    border: 3px solid red;
+}
+#tab ul li{
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#tab p{
+    font-size: 15px;
+}
+img{
+    position: relative;
+    z-index: 2;
+    left: 16%;
+}
+h3{
+    text-align: center;
+}
+section{
+    font-size: 24px;
+}
+.artigo #fatos{
+    border: 3px solid red;
+    max-width: 50%;
+    margin: auto;
+    margin-top: 30px;
+    background-color: aliceblue;
+}
+#fatos section img{
+    width: 70%;
 }
