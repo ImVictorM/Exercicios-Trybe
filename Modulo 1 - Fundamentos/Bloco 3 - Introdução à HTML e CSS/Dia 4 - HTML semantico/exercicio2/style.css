@@ -1,7 +1,7 @@
 body{
     background-color: rgb(201, 231, 201);
 }
-header{
+#header{
     border: 3px solid rgb(184, 176, 176);
     background-color: green;
     color: white;
@@ -34,25 +34,24 @@ header{
     background-color: rgb(219, 193, 145);
 }
 #sobre{
-    margin-left: 14%;
+    margin: auto;
     background-color: rgb(248, 243, 237);
-    border: 3px solid red;
     width: 70%;
     position: relative;
     z-index: 1;
-    height: 60%;
-    height: auto;
-
+    padding: 20px;
 }
 .artigo #sobre aside{
-    border: 3px solid red;
     position: absolute;
     z-index: 2;
     right: 3%;
     top: 22%;
     display: inline-block;
     width: 40%;
-
+    background-color: rgb(255, 255, 255);
+    border: 2px solid #551A8B;
+    border-radius: 8px;
+    
 }
 #sobre #left-content {
     width: 50%;
@@ -73,7 +72,6 @@ header{
 }
 #tab ul{
     list-style-type: none;
-    border: 3px solid red;
 }
 #tab ul li{
     font-size: 20px;
@@ -88,31 +86,34 @@ img{
     z-index: 2;
     left: 16%;
 }
+h2{
+    color: rgb(15, 82, 24);
+}
 h3{
     text-align: center;
+    color: #3f1269;
 }
 section{
     font-size: 24px;
 }
 .artigo #fatos{
-    border: 3px solid red;
     max-width: 50%;
     margin: auto;
     margin-top: 30px;
-    background-color: aliceblue;
+    background-color: rgb(234, 240, 234);
+    padding: 20px;
 }
 #fatos section img{
     width: 70%;
 }
 #referencias{
-    border: 3px solid red;
     margin: auto;
-    width: 70%;
+    width: 65%;
     margin-top: 30px;
-    background-color: aliceblue;
+    background-color: rgb(248, 243, 237);
+    padding: 20px;
 }
 footer{
-    border: 3px solid red;
     background-color: green;
     color: white;
     text-align: center;
@@ -121,4 +122,9 @@ footer{
     font-size: 25px;
     margin-top: 30px;
     padding: 10px;
+    border: 3px solid rgb(184, 176, 176);
 }
+footer #contato {
+    text-decoration: none;
+}
+
