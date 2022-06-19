@@ -11,4 +11,10 @@ Este repositório contém todas as atividades desenvolvidas por [mim](https://ww
 ### Bloco 2 - [Git, Github e Internet](https://github.com/ImVictorM/Exercicios-Trybe/tree/main/Modulo%201%20-%20Fundamentos/Bloco%202%20-%20git%2C%20github%20e%20internet)
 - [x] Dia 1 - Git & GitHub  - O que é e para que serve
 - [x] Dia 2 - Git & GitHub - Entendendo os comandos
-- [ ] Dia 3 - Internet - Entendendo como ela funciona
+- [x] Dia 3 - Internet - Entendendo como ela funciona
+### Bloco 3 - [Introdução à HTML e CSS](https://github.com/ImVictorM/Exercicios-Trybe/tree/main/Modulo%201%20-%20Fundamentos/Bloco%203%20-%20Introdu%C3%A7%C3%A3o%20%C3%A0%20HTML%20e%20CSS)
+- [x] Dia 1 - Introdução/Estruturas de página
+- [x] Dia 2 - Primeiros passos em CSS
+- [x] Dia 3 - Seletores e posicionamento
+- [x] Dia 4 - HTML semântico
+- [ ] Dia 5 - Projeto - Lessons Learned
