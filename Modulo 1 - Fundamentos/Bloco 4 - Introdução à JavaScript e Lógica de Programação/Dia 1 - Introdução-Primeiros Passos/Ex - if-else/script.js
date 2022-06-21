@@ -1,9 +1,9 @@
 const nota = 47;
 
 if (nota < 60) {
-    console.log("Você foi reprovada(o)")
+    console.log("Você foi reprovada(o)");
 } else if (nota < 80){
-    console.log("Você está na nossa lista de espera")
+    console.log("Você está na nossa lista de espera");
 } else {
-    console.log("Parabéns, você foi aprovada(o)!")
+    console.log("Parabéns, você foi aprovada(o)!");
 }
