@@ -1,3 +1,4 @@
+/* true === par */
 const num1 = 3;
 const num2 = 4;
 const num3 = 3;
