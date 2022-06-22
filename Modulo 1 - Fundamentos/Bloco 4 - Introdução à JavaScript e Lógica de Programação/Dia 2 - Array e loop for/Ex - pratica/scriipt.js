@@ -52,3 +52,9 @@ for (let index = 0; index < numbers.length; index += 1) {
 }
 console.log("Menor valor da lista: ", minValue);
 
+//array de 1 a 25
+let newArray = [];
+for(let count = 1; count <= 25; count += 1) {
+    newArray.push(count);
+}
+console.log(newArray);
