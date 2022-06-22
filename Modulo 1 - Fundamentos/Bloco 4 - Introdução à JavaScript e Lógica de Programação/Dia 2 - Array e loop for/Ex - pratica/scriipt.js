@@ -5,4 +5,8 @@ for (eachNumber of numbers) {
     console.log(eachNumber);
     sum += eachNumber;
 }
+
+let average = sum / numbers.length
+
 console.log("Total: ", sum);
+console.log("Média: ", average);
