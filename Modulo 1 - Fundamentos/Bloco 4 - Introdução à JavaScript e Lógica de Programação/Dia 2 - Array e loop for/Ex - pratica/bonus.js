@@ -1,19 +1,5 @@
 
 //ordem crescente
-
-/*
-for(let secondIndex = 1; secondIndex < numbers.length; secondIndex += 1){
-    for(let index = 0; index < numbers.length - 1; index += 1) {
-        if(numbers[index] > numbers[secondIndex]) {
-            let aux = numbers[index];
-            numbers[index] = numbers[secondIndex];
-            numbers[secondIndex] = aux;
-        } 
-    
-    }   
-}
-*/
-
 /*
 //vai comparando com as primeiras posições
 for (let secondIndex = 1; secondIndex < numbers.length; secondIndex += 1) {
@@ -25,8 +11,6 @@ for (let secondIndex = 1; secondIndex < numbers.length; secondIndex += 1) {
         } 
     }
 }
-
-
 console.log(numbers);
 */
 
@@ -45,4 +29,17 @@ for(let replayIndex = 0; replayIndex < numbers.length - 1; replayIndex += 1) {
         }
     }
 }
-console.log(numbers)
+console.log("Ordem crescente: ", numbers);
+
+//decrescente 
+for(let replayIndex = 0; replayIndex < numbers.length -1; replayIndex += 1) {
+    for(let index = 0; index < numbers.length - replayIndex; index += 1) {
+        if(numbers[index] < numbers[index+1]) {
+            let biggerNumber = numbers[index+1];
+            let smallerNumber = numbers[index];
+            numbers[index] = biggerNumber;
+            numbers[index+1] = smallerNumber;
+        }
+    }
+}
+console.log("Ordem decrescente: ",numbers);
