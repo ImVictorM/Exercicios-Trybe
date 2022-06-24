@@ -1,19 +1,24 @@
 let array = ['java', 'javascript', 'python', 'html', 'css'];
 
 //maior palavra
-let maior = '';
+let bigger = '';
 for(let index = 0; index < array.length; index += 1) {
-    if (maior === ''){
-        maior = array[index];
-    } else if (array[index].length > maior.length) {
-        maior = array[index];
+    if (bigger === ''){
+        bigger = array[index];
+    } else if (array[index].length > bigger.length) {
+        bigger = array[index];
     }
 }
-console.log(maior)
+console.log(bigger);
 
+//menor palavra
+let smaller = '';
 
-// for(let letterIndex = 0; letterIndex < array[index]; letterIndex += 1) {
-//     if (letterIndex) {
-//         count += 1;
-//     }
-// }
+for(let index = 0; index < array.length; index += 1){
+    if(smaller === ''){
+        smaller = array[index];
+    } else if (array[index].length < smaller.length) {
+        smaller = array[index];
+    }
+}
+console.log(smaller);
