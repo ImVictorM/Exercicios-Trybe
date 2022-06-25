@@ -55,3 +55,18 @@ let numbers2 = [2, 5, 6, 24, -1, 9];
 console.log(minIndex(numbers2));
 
 // 4
+
+function biggerName (array) {
+    let biggerOne = null;
+    for (let name of array){
+        if(biggerOne === null) {
+            biggerOne = name;
+        } else if (name.length > biggerOne.length){
+            biggerOne = name;
+        }
+    }
+    return biggerOne;
+}
+
+let nomes = ['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana'];
+console.log(biggerName(nomes));
