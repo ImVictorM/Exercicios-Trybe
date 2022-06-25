@@ -40,3 +40,18 @@ function maxIndex(array) {
 */
 let numbers = [2, 3, 6, 7, 10, 1];
 console.log(maxIndex(numbers));
+
+// 3
+/* [COLINHA]
+    … in front of an array will convert array to distinct variables, equivalent to: Math.min(num1, num2, num3)
+    
+*/
+function minIndex (array) {
+    let minValue = Math.min(...array);
+    let minValueIndex = array.indexOf(minValue);
+    return minValueIndex;
+}
+let numbers2 = [2, 5, 6, 24, -1, 9];
+console.log(minIndex(numbers2));
+
+// 4
