@@ -55,7 +55,6 @@ let numbers2 = [2, 5, 6, 24, -1, 9];
 console.log(minIndex(numbers2));
 
 // 4
-
 function biggerName (array) {
     let biggerOne = null;
     for (let name of array){
@@ -70,3 +69,27 @@ function biggerName (array) {
 
 let nomes = ['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana'];
 console.log(biggerName(nomes));
+
+// 5
+function repeatsCount (array) {
+
+    let repeatsTheMost = null;
+    let maxRepetitionCount = 0;
+
+    for(let index = 0; index < array.length; index += 1) {
+        let repetitionCount = 0; //a cada novo indice zera a contagem de repetições
+        for(let aheadIndex = index + 1; aheadIndex < array.length; aheadIndex += 1) {
+            if (array[index] === array[aheadIndex]) {
+                repetitionCount += 1;
+            }
+            if(repetitionCount > maxRepetitionCount) {
+                maxRepetitionCount = repetitionCount;
+                repeatsTheMost = array[index];
+            }
+        }
+    }
+    return repeatsTheMost;
+}
+
+let numbers3 = [2, 3, 2, 5, 8, 2, 3, 8, 8, 8, 8, 3, 3, 3, 3, 3, 3, 3];
+console.log(repeatsCount(numbers3));
