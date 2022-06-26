@@ -86,6 +86,7 @@ function repeatsCount (array) {
                 maxRepetitionCount = repetitionCount;
                 repeatsTheMost = array[index];
             }
+
         }
     }
     return repeatsTheMost;
