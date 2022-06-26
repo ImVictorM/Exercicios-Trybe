@@ -10,12 +10,18 @@ function converterAlgarismo(string) {
         "m": 1000,
     }
     let valores = [];
+
+    //transforma string em array de numeros
     for (let index = 0; index < string.length; index += 1) {
         for (let chave in algarismos) {
             if (chave === string[index]) {
                 valores.push(algarismos[chave]);
             }
         }
+    }
+    //validação caracteres invalidos
+    if(valores.length < string.length){
+        return "[ERROR] um ou mais caracteres não pertencem a algarismos romanos."
     }
     //validação antecedentes
     for(let index = 0; index < valores.length; index += 1) {
@@ -35,9 +41,22 @@ function converterAlgarismo(string) {
         } 
     }
 
-    console.log(valores)
+    //validação repetição de algarismos
+    for(let index = 0; index < valores.length; index += 1){
+        let repeticoes = 0;
+        for(let valor of valores){
+            if(valores[index] === valor){
+                repeticoes += 1;
+            }
+            if(repeticoes > 3){
+                return "[ERROR] numero de repetições maximo excedido"
+            }
+        }
+    }
+    console.log(valores);
+
     let valorCheio = null;
-    let index = 0
+    let index = 0;
     while (index < valores.length) {
 
         if (valores[index] > valores[index + 1]) {  //primeiro maior que segundo
@@ -76,7 +95,7 @@ function converterAlgarismo(string) {
             break;
         }
     }
-    
+
     //validação valor maximo
     let valorMaximoPossivel = 3999;
     if(valorCheio > valorMaximoPossivel){
@@ -85,6 +104,5 @@ function converterAlgarismo(string) {
     
     return valorCheio;
 }
-
 
 console.log(converterAlgarismo("cccc"));
