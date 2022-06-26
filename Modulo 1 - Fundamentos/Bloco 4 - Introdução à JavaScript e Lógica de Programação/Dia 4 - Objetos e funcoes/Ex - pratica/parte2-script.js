@@ -4,7 +4,7 @@
     join() -> retorna um array como string (não é inplace), se não for passado parametro, separa por virgula
  */
 
-// 1
+// ex 1
 function isPalindrome (string) {
     let reversedString = string.split('').reverse().join('');
     if(reversedString === string) {
@@ -15,7 +15,7 @@ function isPalindrome (string) {
 
 console.log(isPalindrome("arara"));
 
-// 2 
+// ex 2 
 function maxIndex(array) {
     let maxValue = null;
     let maxValueIndex = null;
@@ -41,7 +41,7 @@ function maxIndex(array) {
 let numbers = [2, 3, 6, 7, 10, 1];
 console.log(maxIndex(numbers));
 
-// 3
+// ex 3
 /* [COLINHA]
     … in front of an array will convert array to distinct variables, equivalent to: Math.min(num1, num2, num3)
     
@@ -54,7 +54,7 @@ function minIndex (array) {
 let numbers2 = [2, 5, 6, 24, -1, 9];
 console.log(minIndex(numbers2));
 
-// 4
+// ex 4
 function biggerName (array) {
     let biggerOne = null;
     for (let name of array){
@@ -70,7 +70,7 @@ function biggerName (array) {
 let nomes = ['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana'];
 console.log(biggerName(nomes));
 
-// 5
+// ex 5
 function repeatsCount (array) {
 
     let repeatsTheMost = null;
@@ -94,7 +94,7 @@ function repeatsCount (array) {
 let numbers3 = [2, 3, 2, 5, 8, 2, 3, 8, 8, 8, 8, 3, 3, 3, 3, 3, 3, 3];
 console.log(repeatsCount(numbers3));
 
-// 6
+// ex 6
 function bigSum (numberLimit) {
     if(numberLimit < 0) {
         return "[ERROR]";
@@ -106,5 +106,24 @@ function bigSum (numberLimit) {
         return sum;
     }
 }
-
 console.log(bigSum(100));
+
+// ex 7
+function wordEndChecker (word, ending) {
+    if (ending.length > word.length){
+        return "[ERROR]";
+    }
+    let wordDiference = word.length - ending.length;
+    let wordCut = '';
+    for (let index = wordDiference; index < word.length; index += 1) {
+        wordCut += word[index];
+    }
+    for(let index = 0; index < wordCut.length; index += 1) {
+        if (wordCut[index] !== ending[index]){
+            return false;
+        }
+    }
+    return true;
+}
+console.log(wordEndChecker('joaofernando', 'fernan'));
+
