@@ -93,3 +93,18 @@ function repeatsCount (array) {
 
 let numbers3 = [2, 3, 2, 5, 8, 2, 3, 8, 8, 8, 8, 3, 3, 3, 3, 3, 3, 3];
 console.log(repeatsCount(numbers3));
+
+// 6
+function bigSum (numberLimit) {
+    if(numberLimit < 0) {
+        return "[ERROR]";
+    } else {
+        let sum = 0;
+        for(let value = 0; value <= numberLimit; value += 1) {
+            sum += value;
+        }
+        return sum;
+    }
+}
+
+console.log(bigSum(100));
