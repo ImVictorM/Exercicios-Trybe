@@ -28,15 +28,15 @@ function converterAlgarismo(string) {
         let proximo = index + 1;
         if(valores[index] === 1) {
             if(valores[proximo] > 10){
-                return "[ERROR]"
+                return "[ERROR]";
             }
         } else if(valores[index] === 10) {
             if(valores[proximo] > 100) {
-                return "[ERROR]"
+                return "[ERROR]";
             }
         } else if (valores[index] === 50) {
             if(valores[proximo] > 50) {
-                return "[ERROR]"
+                return "[ERROR]";
             }
         } 
     }
@@ -49,12 +49,13 @@ function converterAlgarismo(string) {
                 repeticoes += 1;
             }
             if(repeticoes > 3){
-                return "[ERROR] numero de repetições maximo excedido"
+                return "[ERROR] numero de repetições maximo de um algarismo excedido";
             }
         }
     }
     console.log(valores);
 
+    // soma
     let valorCheio = null;
     let index = 0;
     while (index < valores.length) {
@@ -99,9 +100,9 @@ function converterAlgarismo(string) {
     //validação valor maximo
     let valorMaximoPossivel = 3999;
     if(valorCheio > valorMaximoPossivel){
-        return "[ERROR]";
+        return "[ERROR] valor maximo excedido";
     }
-    
+
     return valorCheio;
 }
 
