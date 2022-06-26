@@ -17,10 +17,29 @@ function converterAlgarismo(string) {
             }
         }
     }
-    let valorCheio = null;
+    //validação antecedentes
+    for(let index = 0; index < valores.length; index += 1) {
+        let proximo = index + 1;
+        if(valores[index] === 1) {
+            if(valores[proximo] > 10){
+                return "[ERROR]"
+            }
+        } else if(valores[index] === 10) {
+            if(valores[proximo] > 100) {
+                return "[ERROR]"
+            }
+        } else if (valores[index] === 50) {
+            if(valores[proximo] > 50) {
+                return "[ERROR]"
+            }
+        } 
+    }
+
     console.log(valores)
+    let valorCheio = null;
     let index = 0
     while (index < valores.length) {
+
         if (valores[index] > valores[index + 1]) {  //primeiro maior que segundo
             if(valores[index + 2] > valores[index + 1]){
                 valorCheio += (valores[index] + (valores[index + 2] - valores[index + 1]));
@@ -57,8 +76,15 @@ function converterAlgarismo(string) {
             break;
         }
     }
+    
+    //validação valor maximo
+    let valorMaximoPossivel = 3999;
+    if(valorCheio > valorMaximoPossivel){
+        return "[ERROR]";
+    }
+    
     return valorCheio;
 }
 
 
-console.log(converterAlgarismo("mdix"));
+console.log(converterAlgarismo("cccc"));
