@@ -72,9 +72,7 @@ function converterAlgarismo(string) {
         }
     }
 
-    console.log(valores);
-
-    // soma
+    // calculo
     let valorCheio = null;
     let index = 0;
     while (index < valores.length) {
