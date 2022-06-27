@@ -32,7 +32,7 @@ function converterAlgarismo(string) {
             }
         } else if (valores[index] === 5) {
             if (valores[proximo] > 5) {
-                return "[ERROR]"
+                return "[ERROR]";
             }
         } else if (valores[index] === 10) {
             if (valores[proximo] > 100) {
@@ -46,6 +46,10 @@ function converterAlgarismo(string) {
             if (valores[proximo] > 500) {
                 return "[ERROR]";
             }
+        } else if (valores[valores.length - 1] === 100){
+          if(valores[valores.length - 2] < 100){
+            return "[ERROR]";
+          }  
         }
     }
     //validação exceção numero 1
@@ -114,4 +118,4 @@ function converterAlgarismo(string) {
     return valorCheio;
 }
 
-console.log(converterAlgarismo("xxicc"));
+console.log(converterAlgarismo("xxix"));
