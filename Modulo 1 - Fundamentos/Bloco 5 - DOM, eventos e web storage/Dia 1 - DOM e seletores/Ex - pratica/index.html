@@ -61,16 +61,20 @@
        inserirTexto();
        // 2
        function mudaCorAmarela() {
-        document.getElementsByClassName('main-content')[0].style.backgroundColor = 'rgb(76,164,109)';
+        return document.getElementsByClassName('main-content')[0].style.backgroundColor = 'rgb(76,164,109)';
        }
        mudaCorAmarela();
        
        // 3
        function mudaCorVermelho() {
-        document.getElementsByClassName('center-content')[0].style.backgroundColor = 'white';
+        return document.getElementsByClassName('center-content')[0].style.backgroundColor = 'white';
        }
        mudaCorVermelho();
-       
+       // 4
+       function corrigirTexto () {
+        return document.getElementsByClassName('title')[0].innerText = 'Exercício 5.1 - JavaScript';
+       }
+       corrigirTexto();
     </script>
   </body>
 </html>
