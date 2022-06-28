@@ -75,6 +75,15 @@
         return document.getElementsByClassName('title')[0].innerText = 'Exercício 5.1 - JavaScript';
        }
        corrigirTexto();
+       // 5
+       function paraMaiusculo () {
+        let paragrafos = document.getElementsByTagName('p');
+        for (let elemento of paragrafos) {
+          elemento.innerText = elemento.innerText.toUpperCase();
+        }
+        return paragrafos;
+       }
+       paraMaiusculo();
     </script>
   </body>
 </html>
