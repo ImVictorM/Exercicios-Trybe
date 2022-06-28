@@ -59,6 +59,7 @@
         return document.querySelectorAll('.center-content p')[1].innerText = 'trabalhando em uma empresa muito dazora e ajudando minha familia';
        }
        inserirTexto();
+
        // 2
        function mudaCorAmarela() {
         return document.getElementsByClassName('main-content')[0].style.backgroundColor = 'rgb(76,164,109)';
@@ -70,11 +71,13 @@
         return document.getElementsByClassName('center-content')[0].style.backgroundColor = 'white';
        }
        mudaCorVermelho();
+
        // 4
        function corrigirTexto () {
         return document.getElementsByClassName('title')[0].innerText = 'Exercício 5.1 - JavaScript';
        }
        corrigirTexto();
+
        // 5
        function paraMaiusculo () {
         let paragrafos = document.getElementsByTagName('p');
@@ -84,6 +87,15 @@
         return paragrafos;
        }
        paraMaiusculo();
+
+       // 6
+       function exibirP () {
+        let paragrafos = document.getElementsByTagName('p');
+        for (let elemento of paragrafos) {
+          console.log(elemento.innerText);
+        }
+       }
+       exibirP();
     </script>
   </body>
 </html>
