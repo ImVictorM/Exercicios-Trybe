@@ -21,10 +21,12 @@ function resetClasses() {
     element.classList.remove('tech');
   }
 }
-list.addEventListener('click', function (event) {
-  resetClasses();
-  event.target.classList.add('tech');
-});
+for (let element of listItems) {
+  element.addEventListener('click', function (event) {
+    resetClasses();
+    event.target.classList.add('tech');
+  });
+}
 
 // 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
 // com a classe 'tech';
