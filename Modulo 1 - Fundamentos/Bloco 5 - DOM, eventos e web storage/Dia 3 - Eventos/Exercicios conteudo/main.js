@@ -29,7 +29,7 @@ list.addEventListener('click', function (event) {
 // 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
 // com a classe 'tech';
 
-input.addEventListener('keyup', function (event) {
+input.addEventListener('keyup', function(event) {
   document.getElementsByClassName('tech')[0].innerText = event.target.value;
 });
 
@@ -38,12 +38,19 @@ input.addEventListener('keyup', function (event) {
 // 4.1. Que tal redirecionar para seu portfólio?
 
 let myTop3 = document.getElementById('my-spotrybefy');
-myTop3.addEventListener('dblclick', function () {
+myTop3.addEventListener('dblclick', function() {
   window.location.assign('https://imvictorm.github.io/');
 })
 
 // 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
 // a cor do mesmo;
+myTop3.addEventListener('mouseover', function(event) {
+  event.target.classList.add('yellow');
+})
+// só pra ficar mais bonitinho*
+myTop3.addEventListener('mouseleave', function(event) {
+  event.target.classList.remove('yellow');
+})
 
 // Segue abaixo um exemplo do uso de event.target:
 
