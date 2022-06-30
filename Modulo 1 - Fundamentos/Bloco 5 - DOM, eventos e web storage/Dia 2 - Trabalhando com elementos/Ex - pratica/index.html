@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      section {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // parte 1
+      // 1
+      let body = document.getElementsByTagName('body')[0];
+      let h1 = document.createElement('h1');
+      h1.innerText = 'Exercício 5.2 - JavaScript DOM';
+      body.appendChild(h1);
+      // 2
+      let main = document.createElement('main');
+      main.className = 'main-content';
+      body.appendChild(main);
+      // 3
+      let section = document.createElement('section');
+      section.className = 'center-content';
+      main.appendChild(section);
+      // 4
+      let p = document.createElement('p');
+      p.innerText = `I'm already bored I'm pretty sure I've seen this one before I've got a long drive, I'll tape my eyes So I don't fall asleep again Singing out`;
+      section.appendChild(p);
+      // 5
+      let leftSection = document.createElement('section');
+      leftSection.className = 'left-content';
+      main.appendChild(leftSection);
+      // 6
+      let rightSection = document.createElement('section');
+      rightSection.className = 'right-content';
+      main.appendChild(rightSection);
+      // 7
+      let imagem = document.createElement('img');
+      imagem.src = 'https://picsum.photos/200';
+      imagem.className = 'small-image';
+      leftSection.appendChild(imagem);
+      // 8
+      let ul = document.createElement('ul');
+      rightSection.appendChild(ul);
+      for (let liCount = 1; liCount <= 10; liCount += 1) {
+        let listItem = document.createElement('li');
+        listItem.innerText = liCount;
+        ul.appendChild(listItem);
+      }
+      // 9
+      for (let h3Count = 1; h3Count <= 3; h3Count += 1) {
+        let h3 = document.createElement('h3');
+        main.appendChild(h3);
+      }
+      // parte 2
+      // 1
+      h1.classList.add('title');
+      // 2
+      let listah3 = document.getElementsByTagName('h3');
+      for (let element of listah3) {
+        element.classList.add('description');
+      }
+      // 3
+      main.removeChild(leftSection);
+      // 4
+      rightSection.style.marginRight = 'auto';
+      // 5
+      section.parentElement.style.backgroundColor = 'green';
+      // 6
+      let listItems = document.getElementsByClassName('right-content')[0].firstChild;
+      listItems.removeChild(listItems.lastChild);
+      listItems.removeChild(listItems.lastChild);
+      
+      
+    </script>
+  </body>
+</html>
