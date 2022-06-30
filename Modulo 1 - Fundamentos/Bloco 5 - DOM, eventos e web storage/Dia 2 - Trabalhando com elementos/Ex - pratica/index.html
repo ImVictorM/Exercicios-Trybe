@@ -113,8 +113,13 @@
       main.removeChild(leftSection);
       // 4
       rightSection.style.marginRight = 'auto';
+      // 5
+      section.parentElement.style.backgroundColor = 'green';
+      // 6
+      let listItems = document.getElementsByClassName('right-content')[0].firstChild;
+      listItems.removeChild(listItems.lastChild);
+      listItems.removeChild(listItems.lastChild);
       
-  
       
     </script>
   </body>
