@@ -57,6 +57,7 @@
   </head>
   <body>
     <script>
+      // parte 1
       // 1
       let body = document.getElementsByTagName('body')[0];
       let h1 = document.createElement('h1');
@@ -99,6 +100,14 @@
       for (let h3Count = 1; h3Count <= 3; h3Count += 1) {
         let h3 = document.createElement('h3');
         main.appendChild(h3);
+      }
+      // parte 2
+      // 1
+      h1.classList.add('title');
+      // 2
+      let listah3 = document.getElementsByTagName('h3');
+      for (let element of listah3) {
+        element.classList.add('description');
       }
       
   
