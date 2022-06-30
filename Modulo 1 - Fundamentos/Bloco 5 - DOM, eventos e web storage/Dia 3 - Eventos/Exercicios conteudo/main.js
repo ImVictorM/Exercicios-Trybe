@@ -33,11 +33,14 @@ input.addEventListener('keyup', function (event) {
   document.getElementsByClassName('tech')[0].innerText = event.target.value;
 });
 
-
-
 // 4. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
 // redirecione para alguma página;
 // 4.1. Que tal redirecionar para seu portfólio?
+
+let myTop3 = document.getElementById('my-spotrybefy');
+myTop3.addEventListener('dblclick', function () {
+  window.location.assign('https://imvictorm.github.io/');
+})
 
 // 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
 // a cor do mesmo;
