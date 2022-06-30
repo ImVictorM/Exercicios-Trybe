@@ -10,6 +10,18 @@ const myWebpage = document.getElementById('my-spotrybefy');
 // 1.2. Note que uma das caixas está um pouco acima das outras. Por que isso ocorre?
 
 // 2. Crie uma função que adicione a classe 'tech' ao elemento `li` quando for clicado.
+
+let itemList = document.getElementsByTagName('li');
+for (let element of itemList) {
+  element.classList.remove('tech');
+  element.addEventListener('click', addClass); 
+}
+function addClass(event) {
+  if (!event.target.classList.contains('tech')) {
+    event.target.classList = 'tech';
+  }
+}
+
 // 2.1. Deve existir apenas um elemento com a classe 'tech'. Como você faz isso?
 
 // 3. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
