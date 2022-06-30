@@ -82,7 +82,19 @@
       let rightSection = document.createElement('section');
       rightSection.className = 'right-content';
       main.appendChild(rightSection);
-
+      // 7
+      let imagem = document.createElement('img');
+      imagem.src = 'https://picsum.photos/200';
+      imagem.className = 'small-image';
+      leftSection.appendChild(imagem);
+      // 8
+      let ul = document.createElement('ul');
+      rightSection.appendChild(ul);
+      for (let liCount = 1; liCount <= 10; liCount += 1) {
+        let listItem = document.createElement('li');
+        listItem.innerText = liCount;
+        ul.appendChild(listItem);
+      }
       
   
       
