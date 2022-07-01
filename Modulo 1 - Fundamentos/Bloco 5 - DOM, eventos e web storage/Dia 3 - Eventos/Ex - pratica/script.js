@@ -113,5 +113,16 @@ function appendTask(string) {
 let addButton = document.getElementById('btn-add');
 addButton.addEventListener('click', function () {
   let taskMessage = document.getElementById('task-input').value;
+  addColor('yellow');
   appendTask(taskMessage);
 });
+
+// 8
+function addColor(cor) {
+  let div = document.createElement('div');
+  div.classList.add('task');
+  div.style.backgroundColor = cor;
+  document.getElementsByClassName('my-tasks')[0].appendChild(div);
+}
+
+
