@@ -92,3 +92,15 @@ fridayButton.addEventListener('click', function () {
     }
   }
 });
+
+// 6
+const daysContainer = document.getElementsByClassName('day');
+for (let day of daysContainer) {
+  console.log(day)
+  day.addEventListener('mouseover', function (event) {
+    event.target.style.fontSize = '25px';
+  });
+  day.addEventListener('mouseout', function (event) {
+    event.target.style.fontSize = '20px';
+  })
+}
