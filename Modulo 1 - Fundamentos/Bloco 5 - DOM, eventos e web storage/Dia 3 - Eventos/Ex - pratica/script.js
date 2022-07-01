@@ -113,16 +113,26 @@ function appendTask(string) {
 let addButton = document.getElementById('btn-add');
 addButton.addEventListener('click', function () {
   let taskMessage = document.getElementById('task-input').value;
-  addColor('yellow');
+  addTaskSub('yellow');
   appendTask(taskMessage);
 });
 
 // 8
-function addColor(cor) {
+function addTaskSub(cor) {
   let div = document.createElement('div');
   div.classList.add('task');
   div.style.backgroundColor = cor;
   document.getElementsByClassName('my-tasks')[0].appendChild(div);
+  // 9
+  div.addEventListener('click', function (event) {
+    if (event.target.classList.contains('taskselected')) {
+      event.target.classList.remove('taskselected');
+    } else {
+      event.target.classList.add('taskselected');
+    }
+  })
 }
+
+
 
 
