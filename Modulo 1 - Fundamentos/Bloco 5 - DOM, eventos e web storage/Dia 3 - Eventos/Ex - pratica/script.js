@@ -102,6 +102,17 @@ for (let day of daysContainer) {
   day.addEventListener('mouseout', function (event) {
     event.target.style.fontSize = '20px';
   })
+  // 10
+  day.addEventListener('click', function (event) {
+    let color = document.getElementsByClassName('taskselected')[0].style.backgroundColor;
+    console.log(color);
+
+    if (event.target.style.color === color) {
+      event.target.style.color = '#777';
+    } else {
+      event.target.style.color = color;
+    }
+  })
 }
 // 7
 function appendTask(string) {
@@ -132,6 +143,10 @@ function addTaskSub(cor) {
     }
   })
 }
+
+
+
+
 
 
 
