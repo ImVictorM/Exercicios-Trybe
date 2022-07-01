@@ -124,9 +124,13 @@ function appendTask(string) {
 let addButton = document.getElementById('btn-add');
 addButton.addEventListener('click', function () {
   let taskMessage = document.getElementById('task-input').value;
-  addTaskSub('yellow');
+  addTaskSub(generateRandomColor());
   appendTask(taskMessage);
 });
+
+function generateRandomColor () {
+  return `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+}
 
 // 8
 function addTaskSub(cor) {
