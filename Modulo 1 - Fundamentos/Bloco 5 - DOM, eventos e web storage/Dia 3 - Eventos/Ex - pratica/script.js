@@ -140,14 +140,17 @@ function addTaskSub(cor) {
   document.getElementsByClassName('my-tasks')[0].appendChild(div);
   // 9
   div.addEventListener('click', function (event) {
-    if (event.target.classList.contains('taskselected')) {
-      event.target.classList.remove('taskselected');
-    } else {
-      event.target.classList.add('taskselected');
-    }
-  })
+    resetClasses();
+    event.target.classList.add('taskselected');
+  });
 }
 
+function resetClasses() {
+  let resetList = document.getElementsByClassName('taskselected');
+  for (let element of resetList) {
+    element.classList.remove('taskselected');
+  }
+}
 
 
 
