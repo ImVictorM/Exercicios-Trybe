@@ -46,18 +46,17 @@ for (let index = 0; index < decemberDaysList.length; index += 1) {
   }
 }
 
-let button = document.createElement('button');
+let holidayButton = document.createElement('button');
 function createHolidayButton(string) {
-  button.classList.add('btn-holiday');
-  button.innerText = string;
-  document.getElementsByClassName('buttons-container')[0].appendChild(button);
+  holidayButton.classList.add('btn-holiday');
+  holidayButton.innerText = string;
+  document.getElementsByClassName('buttons-container')[0].appendChild(holidayButton);
 }
 
 createHolidayButton('Feriados');
 
-button.addEventListener('click', function() {
+holidayButton.addEventListener('click', function() {
   let holidays = document.getElementsByClassName('holiday');
-  console.log(holidays);
   for (let day of holidays) {
     if (day.style.backgroundColor === 'rgb(250, 221, 221)') {
       day.style.backgroundColor = 'rgb(238,238,238)';
@@ -66,3 +65,12 @@ button.addEventListener('click', function() {
     }
   }
 });
+
+let fridayButton = document.createElement('button');
+function createFridayButton(string) {
+  fridayButton.id = 'btn-friday';
+  fridayButton.innerText = string;
+  document.getElementsByClassName('buttons-container')[0].appendChild(fridayButton);
+}
+createFridayButton('Sexta-feira');
+ 
