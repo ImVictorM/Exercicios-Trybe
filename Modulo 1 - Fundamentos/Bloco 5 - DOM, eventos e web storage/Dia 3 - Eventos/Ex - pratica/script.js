@@ -96,7 +96,6 @@ fridayButton.addEventListener('click', function () {
 // 6
 const daysContainer = document.getElementsByClassName('day');
 for (let day of daysContainer) {
-  console.log(day)
   day.addEventListener('mouseover', function (event) {
     event.target.style.fontSize = '25px';
   });
@@ -104,3 +103,15 @@ for (let day of daysContainer) {
     event.target.style.fontSize = '20px';
   })
 }
+// 7
+function appendTask(string) {
+  let taskElement = document.createElement('span');
+  taskElement.innerText = string;
+  document.getElementsByClassName('my-tasks')[0].appendChild(taskElement);
+}
+
+let addButton = document.getElementById('btn-add');
+addButton.addEventListener('click', function () {
+  let taskMessage = document.getElementById('task-input').value;
+  appendTask(taskMessage);
+});
