@@ -45,3 +45,12 @@ for (let index = 0; index < decemberDaysList.length; index += 1) {
     listItem.classList.add('friday');
   }
 }
+
+function feriados(string) {
+  let button = document.createElement('button');
+  button.classList.add('btn-holiday');
+  button.innerText = string;
+  document.getElementsByClassName('buttons-container')[0].appendChild(button);
+}
+
+feriados('Feriados');
