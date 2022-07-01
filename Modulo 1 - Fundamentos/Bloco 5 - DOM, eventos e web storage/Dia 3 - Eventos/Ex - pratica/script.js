@@ -14,7 +14,7 @@ function createDaysOfTheWeek() {
 createDaysOfTheWeek();
 
 // Escreva seu código abaixo.
-
+// 1
 let decemberDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
 let ul = document.getElementById('days');
@@ -46,16 +46,17 @@ for (let index = 0; index < decemberDaysList.length; index += 1) {
   }
 }
 
+// 2
 let holidayButton = document.createElement('button');
 function createHolidayButton(string) {
   holidayButton.classList.add('btn-holiday');
   holidayButton.innerText = string;
   document.getElementsByClassName('buttons-container')[0].appendChild(holidayButton);
 }
-
 createHolidayButton('Feriados');
 
-holidayButton.addEventListener('click', function() {
+// 3
+holidayButton.addEventListener('click', function () {
   let holidays = document.getElementsByClassName('holiday');
   for (let day of holidays) {
     if (day.style.backgroundColor === 'rgb(250, 221, 221)') {
@@ -66,6 +67,7 @@ holidayButton.addEventListener('click', function() {
   }
 });
 
+// 4
 let fridayButton = document.createElement('button');
 function createFridayButton(string) {
   fridayButton.id = 'btn-friday';
@@ -73,4 +75,20 @@ function createFridayButton(string) {
   document.getElementsByClassName('buttons-container')[0].appendChild(fridayButton);
 }
 createFridayButton('Sexta-feira');
- 
+
+// 5
+let fridayDayCountainer = [];
+let fridays = document.getElementsByClassName('friday');
+for (let day of fridays) {
+  fridayDayCountainer.push(day.innerText);
+}
+fridayButton.addEventListener('click', function () {
+  const message = 'Sextou!';
+  for (let index = 0; index < fridays.length; index += 1) {
+    if (fridays[index].innerText === message) {
+      fridays[index].innerText = fridayDayCountainer[index];
+    } else {
+      fridays[index].innerText = 'Sextou!';
+    }
+  }
+});
