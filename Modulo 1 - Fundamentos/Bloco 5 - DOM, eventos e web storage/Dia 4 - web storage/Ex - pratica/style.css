@@ -1,0 +1,45 @@
+body {
+  font-size: 18px;
+  line-height: 20px;
+}
+h1 {
+  text-align: center;
+  font-size: 80px;
+}
+
+#main-container {
+  text-align: center;
+}
+#right-container{
+  width: 40%;
+  display: inline-block;
+  margin: 0 30px;
+}
+#left-container{
+ width: 40%;
+ display: inline-block;
+  margin: 0 30px;
+}
+header{
+  background-color: rgb(209, 209, 209);
+  height: 60px;
+}
+#input-container{
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}
+#input-container div{
+  display: inline-block;
+  margin: 10px 20px;
+}
+
+.darkmode {
+  background-color: black;
+  color: white;
+}
+
+.numberField {
+  width: 100px;
+}
+
