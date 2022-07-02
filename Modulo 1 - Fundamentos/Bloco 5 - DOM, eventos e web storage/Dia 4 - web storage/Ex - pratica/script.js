@@ -38,5 +38,23 @@ window.onload = function() {
         document.body.style.fontFamily = 'Arial';
     }
   });
-  
+  let fontSizeField = document.getElementById('font-size-input');
+  fontSizeField.addEventListener('click', function() {
+    if (fontSizeField.value === '') {
+      fontSizeField.value = 18;
+    }
+  });
+
+  let fontSizeButton = document.getElementById('font-size-button');
+  fontSizeButton.addEventListener('click', function() {
+    if (fontSizeField.value > 30) {
+      document.body.style.fontSize = '30px';
+      fontSizeField.value = 30;
+    } else if (fontSizeField.value < 18) {
+      document.body.style.fontSize = '18px';
+      fontSizeField.value = 18;
+    } else {
+      document.body.style.fontSize = fontSizeField.value + 'px';
+    }
+  });
 }
