@@ -104,33 +104,49 @@ for (let day of daysContainer) {
   })
   // 10
   day.addEventListener('click', function (event) {
-    let color = document.getElementsByClassName('taskselected')[0].style.backgroundColor;
-    console.log(color);
+    let color = document.getElementsByClassName('selected')[0].style.backgroundColor;
 
     if (event.target.style.color === color) {
-      event.target.style.color = '#777';
+      event.target.style.color = 'rgb(119,119,119)';
     } else {
       event.target.style.color = color;
     }
   })
 }
-// 7
+// bonus
+
 function appendTask(string) {
-  let taskElement = document.createElement('span');
-  taskElement.innerText = string;
-  document.getElementsByClassName('my-tasks')[0].appendChild(taskElement);
+  let taskItem = document.createElement('li');
+  taskItem.innerText = string;
+  document.getElementsByClassName('task-list')[0].appendChild(taskItem);
+}
+function addClickEvent() {
+  let taskMessage = document.getElementById('task-input').value;
+  if (taskMessage === '') {
+    window.alert('[ERROR] campo vazio!')
+  } else {
+    appendTask(taskMessage);
+  }
 }
 
 let addButton = document.getElementById('btn-add');
-addButton.addEventListener('click', function () {
-  let taskMessage = document.getElementById('task-input').value;
-  addTaskSub(generateRandomColor());
-  appendTask(taskMessage);
+addButton.addEventListener('click', addClickEvent);
+
+let taskInput = document.getElementById('task-input');
+taskInput.addEventListener('keypress', function(event) {
+  if (event.key === 'Enter') {
+    addClickEvent();
+  }
 });
 
-function generateRandomColor () {
-  return `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+
+// 7
+function addTask(string) {
+  let span = document.createElement('span');
+  span.innerText = string;
+  document.getElementsByClassName('my-tasks')[0].appendChild(span);
 }
+addTask('Projeto');
 
 // 8
 function addTaskSub(cor) {
@@ -140,18 +156,18 @@ function addTaskSub(cor) {
   document.getElementsByClassName('my-tasks')[0].appendChild(div);
   // 9
   div.addEventListener('click', function (event) {
-    resetClasses();
-    event.target.classList.add('taskselected');
+    if (event.target.classList.contains('selected')) {
+      event.target.classList.remove('selected');
+    } else {
+      event.target.classList.add('selected');
+    }
   });
 }
+addTaskSub(generateRandomColor());
 
-function resetClasses() {
-  let resetList = document.getElementsByClassName('taskselected');
-  for (let element of resetList) {
-    element.classList.remove('taskselected');
-  }
+function generateRandomColor () {
+  return `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
 }
-
 
 
 
