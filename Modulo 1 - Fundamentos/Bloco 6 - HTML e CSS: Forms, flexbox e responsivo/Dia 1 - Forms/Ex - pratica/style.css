@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(10, 34, 57, 0.863);
+  color: rgb(252, 252, 252);
+  font-family: sans-serif;
+}
+
+header {
+  border: 2px solid rgb(189, 189, 189);
+  width: 60%;
+  margin: 30px auto;
+  padding: 30px;
+  text-align: center;
+  background-color: rgba(83, 161, 190, 0.767);
+  border-radius: 6px;
+  color: rgb(252, 252, 252);
+}
+
+header p {
+  color: rgba(252, 252, 252, 0.644)
+}
+
+header h1 {
+  font-size: 40px;
+  margin: 10px 0;
+  font-family: monospace;
+}
+
+fieldset {
+  padding: 40px;
+  border: 2px solid rgb(189, 189, 189);
+  width: 60%;
+  margin: 15px auto;
+  background-color: rgba(83, 161, 190, 0.767);
+  border-radius: 10px;
+}
+
+form {
+  margin: 30px auto;
+}
+
+#text-field-container label {
+  display: block;
+  margin: 20px 0;
+}
+
+#radio-container {
+  margin: 20px 0;
+
+}
+
+#radio-container label {
+  margin: 0 7px;
+}
+
+#text-area {
+  margin: 20px 0;
+  padding: 20px;
+}
+
+#check-box-container {
+  margin: 20px 0;
+}
+
+#check-box-container label {
+  display: block;
+  padding: 5px;
+}
+
+#buttons-container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#buttons-container button {
+  margin: 0 30px;
+  width: 150px;
+  height: 30px;
+  background-color: rgb(0, 17, 255);
+  color: white;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+#buttons-container button:hover {
+  background-color: rgba(0, 17, 255, 0.747);
+}
+
+#buttons-container button:active {
+  background-color: rgba(0, 17, 255, 0.493);
+}
