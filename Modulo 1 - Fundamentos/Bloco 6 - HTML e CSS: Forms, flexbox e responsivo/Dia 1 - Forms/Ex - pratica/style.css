@@ -95,3 +95,7 @@ form {
 #buttons-container button:active {
   background-color: rgba(0, 17, 255, 0.493);
 }
+
+#insert-photo {
+  display: none;
+}
