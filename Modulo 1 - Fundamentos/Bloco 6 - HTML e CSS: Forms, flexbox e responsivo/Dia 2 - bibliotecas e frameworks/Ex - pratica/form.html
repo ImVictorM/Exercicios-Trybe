@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrybeTrip</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+</head>
+
+<body class="bg-primary bg-opacity-25">
+  <main class="container mt-3">
+    <header class="bg-light text-center my-3 p-2 border border-2 rounded">
+      <h1 class="display-1">Trybe Trip</h1>
+      <p class="text-muted lead">sua viagem começa aqui</p>
+    </header>
+    <form action="" method="get" id="form" class="bg-light p-4 border border-2 rounded">
+      <fieldset class="container">
+        <div id="text-field-container">
+          <label class="form-label" for="name-input">
+            Nome:
+            <input type="text" placeholder="Insira seu nome" id="name-input" name="name" class="form-control">
+          </label>
+          <label class="form-label" for="email-input">
+            Email:
+            <input type="email" placeholder="Insira seu email" id="email-input" name="email" class="form-control">
+          </label>
+        </div>
+        <div id="radio-container" class="my-3">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label" for="city-radio">
+              <input class="form-check-input" type="radio" name="destino" id="city-radio" value="city">
+              Cidade
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label for="field-radio" class="form-check-label">
+              <input type="radio" name="destino" id="field-radio" value="field" class="form-check-input">
+              Campo
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label for="beach-radio" class="form-check-label">
+              <input type="radio" name="destino" id="beach-radio" value="beach" class="form-check-input">
+              Praia
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <label for="mountains-radio" class="form-check-label">
+              <input type="radio" name="destino" id="mountains-radio" value="mountains" class="form-check-input">
+              Montanhas
+            </label>
+          </div>
+        </div>
+        <div id="text-area-container">
+          <label for="text-area" class="form-label">
+            Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?
+          </label>
+          <textarea name="text-area" id="text-area" cols="70" rows="9" class="form-control">
+          </textarea>
+        </div>
+        <div class="my-4" id="date-container">
+          <label for="date-input">
+            Data:
+            <input type="date" id="date-input" name="date">
+          </label>
+        </div>
+        <div id="check-box-container" class="form-check">
+          <label for="oportunities-check" class="form-check-label">
+            <input type="checkbox" name="oportunity" id="oportunities-check" value="yes" class="form-check-input">
+            Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?
+          </label>
+          <label for="photo-check" class="form-check-label">
+            <input type="checkbox" name="photo-share" id="photo-check" value="yes" class="form-check-input">
+            Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.
+          </label>
+        </div>
+        <input type="file" id="insert-photo" class="my-4">
+      </fieldset>
+      <div id="buttons-container" class="my-3">
+        <button type="submit" id="submit-button" class="btn btn-primary">Enviar</button>
+        <button type="reset" class="btn btn-secondary">Limpar</button>
+      </div>
+    </form>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
