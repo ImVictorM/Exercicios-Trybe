@@ -40,5 +40,8 @@ photoShareCheckBox.addEventListener('click', () => {
   }
 });
 
-
+const date = document.getElementById('date-input');
+date.DatePickerX.init({
+  format: 'dd/mm/yyyy',
+});
 
