@@ -1,33 +1,40 @@
-function nameValidation(name) {
-  if (name.length < 10 || name.length > 40) {
-    return false;
-  }
-  return true;
-}
-function emailValidation(email) {
-  if (email.length < 10 || email.length > 50) {
-    return false;
-  }
-  return true;
-}
-function textValidation(text) {
-  if (text.length > 500) {
-    return false;
-  }
-  return true;
-}
-const form = document.getElementById('form');
-form.addEventListener('submit', (event) => {
-  const name = document.getElementById('name-input').value;
-  const email = document.getElementById('email-input').value;
-  const text = document.getElementById('text-area').value;
-  if (nameValidation(name) && emailValidation(email) && textValidation(text)) {
-    window.alert('Dados enviados com sucesso! Obrigado por participar do concurso TrybeTrip.')
-  } else {
-    event.preventDefault();
-    window.alert('Dados Inválidos')
-  }
-});
+const validate = new  window.JustValidate('#form');
+
+validate
+  .addField('#name-input', [
+    {
+      rule: 'minLength',
+      value: 10,
+    },
+    {
+      rule: 'maxLength',
+      value: 40,
+    },
+    {
+      rule: 'required',
+      errorMessage: 'Name is required',
+    },
+  ])
+  .addField('#email-input', [
+    {
+      rule: 'minLength',
+      value: 10,
+    },
+    {
+      rule: 'maxLength',
+      value: 50,
+    },
+    {
+      rule: 'required',
+      errorMessage: 'Email is required',
+    },
+  ])
+  .addField('#text-area', [
+    {
+      rule: 'maxLength',
+      value: 500,
+    },
+  ]);
 
 document.getElementById('insert-photo').style.display = 'none';
 
