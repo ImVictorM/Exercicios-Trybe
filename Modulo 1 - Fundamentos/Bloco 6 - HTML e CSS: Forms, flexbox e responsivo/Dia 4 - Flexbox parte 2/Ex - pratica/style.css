@@ -59,6 +59,10 @@ body {
   text-align: center;
 }
 
+.movie-container div {
+  flex-grow: 1;
+}
+
 .card-container {
   display: flex;
   flex-wrap: wrap;
