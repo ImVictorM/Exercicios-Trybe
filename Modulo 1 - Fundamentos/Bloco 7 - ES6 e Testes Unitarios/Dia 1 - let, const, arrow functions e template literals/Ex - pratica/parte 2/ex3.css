@@ -4,3 +4,30 @@
   box-sizing: border-box;
 }
 
+main {
+  text-align: center;
+  margin-top: 200px;
+}
+
+body {
+  font-family: monospace;
+  font-size: 18px;
+}
+
+#click-button {
+  width: 300px;
+  height: 100px;
+  font-size: 30px;
+  margin-bottom: 60px;
+  border: 1px solid rgb(179, 179, 179);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#click-button:hover {
+  background-color: rgb(196, 196, 196);
+}
+
+#click-count {
+  display: inline-block;
+}
