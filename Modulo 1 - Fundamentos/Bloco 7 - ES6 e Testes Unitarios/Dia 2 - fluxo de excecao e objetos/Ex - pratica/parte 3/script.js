@@ -40,3 +40,14 @@ console.log(objValues(lesson1));
 // 5
 const allLessons = Object.assign({}, {lesson1, lesson2, lesson3});
 console.log(allLessons);
+
+// 6
+const numberOfStudents = (obj) => {
+  let total = 0;
+  for (let lesson in allLessons) {
+    total += allLessons[lesson].numeroEstudantes;
+  }
+  return total;
+}
+
+console.log(numberOfStudents(allLessons));
