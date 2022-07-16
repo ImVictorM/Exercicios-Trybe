@@ -49,7 +49,6 @@ const numberOfStudents = (obj) => {
   }
   return total;
 }
-
 console.log(numberOfStudents(allLessons));
 
 // 7
@@ -57,5 +56,17 @@ const getValueByNumber = (obj, index) => {
   const values = Object.values(obj);
   return values[index];
 }
-
 console.log(getValueByNumber(lesson1, 0));
+
+//8 
+const verifyEntry = (obj, key, value) => {
+  const objEntries = Object.entries(obj);
+  for (const entry of objEntries) {
+    if (entry[0] === key && entry[1] === value) {
+      return true;
+    }
+  }
+  return false;
+}
+console.log(verifyEntry(lesson3, 'turno', 'noite'));
+console.log(verifyEntry(lesson3, 'materia', 'Maria Clara'));
