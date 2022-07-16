@@ -17,15 +17,23 @@ const lesson3 = {
   professor: 'Maria Clara',
   turno: 'noite',
 };
-
+// 1
 const addNightShift = (obj, key, value) => {
   const newKey = key;
   obj[newKey] = value;
   return obj;
 }
-
 console.log(addNightShift(lesson2, 'turno', 'noite'));
 
+// 2
 const objKeys = (obj) => Object.keys(obj);
 console.log(objKeys(lesson3));
+
+// 3
+const objLength = (obj) => Object.keys(obj).length;
+console.log(objLength(lesson1));
+
+// 4
+const objValues = (obj) => Object.values(obj);
+console.log(objValues(lesson1));
 
