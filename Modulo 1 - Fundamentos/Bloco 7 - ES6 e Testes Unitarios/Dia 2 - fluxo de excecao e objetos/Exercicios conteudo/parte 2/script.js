@@ -13,6 +13,8 @@ const student2 = {
   Git: 'Bom', // chave adicionada
 };
 
+console.log(student1['Html']);
+
 const showSkills = (obj) => {
   for(const key in obj) {
     console.log(`${key}, Nível: ${obj[key]}`);
