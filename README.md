@@ -24,3 +24,22 @@ Este repositório contém todas as atividades desenvolvidas por [mim](https://ww
 - [x] Dia 3 - Lógica de Programação e Algoritmos
 - [x] Dia 4 - Objetos e funções
 - [x] Dia 5 - Projeto - Playground Functions
+### Bloco 5 - [JavaScript:DOM, Eventos e Web Storage](https://github.com/ImVictorM/Exercicios-Trybe/tree/main/Modulo%201%20-%20Fundamentos/Bloco%205%20-%20DOM%2C%20eventos%20e%20web%20storage)
+- [x] Dia 1 - DOM e seletores
+- [x] Dia 2 - Trabalhando com elementos
+- [x] Dia 3 - Eventos
+- [x] Dia 4 - Web Storage
+- [x] Dia 5 - Projeto - Arte com Pixels
+- [x] Dia 6 - Projeto (Bônus) - Lista de tarefas
+- [x] Dia 7 - Projeto (Bônus) - Meme Generator
+- [x] Dia 7 - Projeto (Bônus) - Adivinhe a Cor
+- [x] Dia 7 - Projeto (Bônus) - Carta Misteriosa
+### Bloco 6 - [HTML e CSS: Forms, Flexbox e Responsivo](https://github.com/ImVictorM/Exercicios-Trybe/tree/main/Modulo%201%20-%20Fundamentos/Bloco%206%20-%20HTML%20e%20CSS:%20Forms%2C%20flexbox%20e%20responsivo)
+- [x] Dia 1 - Forms
+- [x] Dia 2 - Bibliotecas JavaScript e Frameworks CSS
+- [x] Dia 3 - Introdução - CSS Flexbox
+- [x] Dia 3 - CSS Flexbox - Parte 1
+- [x] Dia 4 - CSS Flexbox - Parte 2
+- [x] Dia 5 - CSS Responsivo - Mobile First
+- [x] Dia 6 - Projeto - Trybewarts
+
