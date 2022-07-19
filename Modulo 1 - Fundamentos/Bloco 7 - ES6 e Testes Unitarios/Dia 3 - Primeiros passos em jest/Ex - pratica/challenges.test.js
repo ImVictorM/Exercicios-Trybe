@@ -24,21 +24,60 @@ describe('The function encode', () => {
 });
 
 describe('The function decode', () => {
+  const decode = challenges.decode;
   it('is a function', () => {
-    expect(typeof challenges.decode).toEqual('function');
+    expect(typeof decode).toEqual('function');
   });
 
   it('converts a number to respective vowel', () => {
-    expect(challenges.decode('1')).toMatch(/a/);
-    expect(challenges.decode('2')).toMatch(/e/);
-    expect(challenges.decode('3')).toMatch(/i/);
-    expect(challenges.decode('4')).toMatch(/o/);
-    expect(challenges.decode('5')).toMatch(/u/);
+    expect(decode('1')).toMatch(/a/);
+    expect(decode('2')).toMatch(/e/);
+    expect(decode('3')).toMatch(/i/);
+    expect(decode('4')).toMatch(/o/);
+    expect(decode('5')).toMatch(/u/);
   });
 
   it('has the same length', () => {
-    const testMessage = challenges.decode('str3ng t2st');
+    const testMessage = decode('str3ng t2st');
     expect(testMessage.length).toBe('str3ng t2st'.length);
-  })
-
+  });
 });
+
+const techList = challenges.techList;
+
+describe('Testa a função techList', () => {
+  it('Testa se a função techList é definida', () => {
+    expect(techList).toBeDefined();
+  });
+  it('Testa se techList é uma função', () => {
+    expect(typeof techList).toBe('function');
+  });
+  it('Lista com 5 tecnologias deve retornar uma lista de objetos ordenados', () => {
+    expect(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Lucas')).toEqual([
+      {
+        tech: 'CSS',
+        name: 'Lucas'
+      },
+      {
+        tech: 'HTML',
+        name: 'Lucas'
+      },
+      {
+        tech: 'JavaScript',
+        name: 'Lucas'
+      },
+      {
+        tech: 'Jest',
+        name: 'Lucas'
+      },
+      {
+        tech: 'React',
+        name: 'Lucas'
+      }
+    ]);
+  });
+  it('Lista com 0 tecnologias deve retornar uma mensagem de erro "Vazio!"', () => {
+    expect(techList([], 'Lucas')).toBe('Vazio!');
+  });
+});
+
