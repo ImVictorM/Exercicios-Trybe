@@ -1,16 +1,25 @@
 const challenges = require('./challenges');
 
 describe('The function encode', () => {
+  const encode = challenges.encode
   it('is a function', () => {
-    expect(typeof challenges.encode).toEqual('function');
+    expect(typeof encode).toEqual('function');
   });
 
   it('converts a vowel to respective number', () => {
-    expect(challenges.encode('a')).toMatch(/1/);
-    expect(challenges.encode('e')).toMatch(/2/);
-    expect(challenges.encode('i')).toMatch(/3/);
-    expect(challenges.encode('o')).toMatch(/4/);
-    expect(challenges.encode('u')).toMatch(/5/);
+    expect(encode('a')).toMatch(/1/);
+    expect(encode('e')).toMatch(/2/);
+    expect(encode('i')).toMatch(/3/);
+    expect(encode('o')).toMatch(/4/);
+    expect(encode('u')).toMatch(/5/);
+  });
+
+  it('has the same length', () => {
+    const testMessage = encode('string test');
+    expect(testMessage.length).toBe('string test'.length);
+  });
+
+  it('does not convert other vowels', () => {
   });
 });
 
@@ -26,4 +35,10 @@ describe('The function decode', () => {
     expect(challenges.decode('4')).toMatch(/o/);
     expect(challenges.decode('5')).toMatch(/u/);
   });
+
+  it('has the same length', () => {
+    const testMessage = challenges.decode('str3ng t2st');
+    expect(testMessage.length).toBe('str3ng t2st'.length);
+  })
+
 });
