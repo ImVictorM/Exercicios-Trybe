@@ -5,7 +5,7 @@ describe('The function encode', () => {
     expect(typeof challenges.encode).toEqual('function');
   });
 
-  it('converts vowel to respective number', () => {
+  it('converts a vowel to respective number', () => {
     expect(challenges.encode('a')).toMatch(/1/);
     expect(challenges.encode('e')).toMatch(/2/);
     expect(challenges.encode('i')).toMatch(/3/);
@@ -17,5 +17,13 @@ describe('The function encode', () => {
 describe('The function decode', () => {
   it('is a function', () => {
     expect(typeof challenges.decode).toEqual('function');
+  });
+
+  it('converts a number to respective vowel', () => {
+    expect(challenges.decode('1')).toMatch(/a/);
+    expect(challenges.decode('2')).toMatch(/e/);
+    expect(challenges.decode('3')).toMatch(/i/);
+    expect(challenges.decode('4')).toMatch(/o/);
+    expect(challenges.decode('5')).toMatch(/u/);
   });
 });

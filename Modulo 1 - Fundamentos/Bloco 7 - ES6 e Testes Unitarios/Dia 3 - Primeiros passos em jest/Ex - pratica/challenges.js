@@ -99,7 +99,6 @@ function encode(string) {
   }
   return string;
 }
-encode('a');
 
 function decode(string) {
   let charObj = {
