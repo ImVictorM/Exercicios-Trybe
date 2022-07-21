@@ -31,3 +31,32 @@ const raffle = (number, func) => {
 }
 
 // console.log(raffle(5, checkEquality));
+
+// ex 3
+const checkanswers = (rightAnswers, studentAnswers) => {
+  let totalPoints = 0;
+  for (let index = 0; index < rightAnswers.length; index += 1) {
+    switch (studentAnswers[index]) {
+      case rightAnswers[index]:
+        totalPoints += 1;
+        break;
+      case 'N.A':
+        totalPoints += 0;
+        break;
+      default:
+        totalPoints -= 0.5;
+        break;
+    }
+  }
+  return totalPoints;
+}
+
+const grade = (rightAnswers, studentAnswers, callback) => {
+  const finalGrade = callback(rightAnswers, studentAnswers);
+  return finalGrade;
+}
+
+const RIGHT_ANSWERS = ['A', 'C', 'B', 'D', 'A', 'A', 'D', 'A', 'D', 'C'];
+const STUDENT_ANSWERS = ['A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
+
+console.log(grade(RIGHT_ANSWERS, STUDENT_ANSWERS, checkanswers))
