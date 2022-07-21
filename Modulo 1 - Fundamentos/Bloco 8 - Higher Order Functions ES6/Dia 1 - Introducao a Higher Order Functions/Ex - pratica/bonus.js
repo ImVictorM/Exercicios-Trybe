@@ -52,4 +52,18 @@ const mageStats = () => {
   }
   return roundStats;
 }
+
+// parte 2
+
+const gameActions = {
+  warriorTurn: (callback) => {
+    const damageInflicted = callback();
+    dragon.healthPoints -= damageInflicted;
+    warrior.damage = damageInflicted;
+  },
+};
+
+gameActions.warriorTurn(warriorDmg);
+// console.log(dragon)
+// console.log(warrior)
   
