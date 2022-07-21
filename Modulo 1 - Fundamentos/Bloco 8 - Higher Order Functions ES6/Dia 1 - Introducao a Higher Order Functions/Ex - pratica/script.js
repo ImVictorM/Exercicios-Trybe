@@ -16,4 +16,18 @@ const newEmployees = (func) => {
   return employees;
 };
 
-console.log(newEmployees(employee));
+// console.log(newEmployees(employee));
+
+// ex 2
+const checkEquality = (number1, number2) => {
+  if (number1 === number2) {
+    return 'Parabéns você ganhou';
+  }
+  return 'Tente novamente';
+}
+const raffle = (number, func) => {
+  const randomNumber = Math.floor(Math.random() * 5) + 1;
+  return func(randomNumber, number);
+}
+
+// console.log(raffle(5, checkEquality));
