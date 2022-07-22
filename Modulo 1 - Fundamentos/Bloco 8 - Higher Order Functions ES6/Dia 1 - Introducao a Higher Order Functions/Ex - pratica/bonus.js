@@ -56,14 +56,31 @@ const mageStats = () => {
 // parte 2
 
 const gameActions = {
-  warriorTurn: (callback) => {
-    const damageInflicted = callback();
-    dragon.healthPoints -= damageInflicted;
-    warrior.damage = damageInflicted;
+  // 1
+  warriorRound: (callback) => {
+    const inflictedDmg = callback();
+    dragon.healthPoints -= inflictedDmg;
+    warrior.damage = inflictedDmg;
   },
+  // 2
+  mageRound: (callback) => {
+    const inflictedDmg = callback().inflictedDmg;
+    mage.damage = inflictedDmg;
+    mage.mana -= callback().consumedMana;
+    dragon.healthPoints -= inflictedDmg;
+  },
+  // 3
+  dragonRound: (callback) => {
+    const inflictedDmg = callback();
+    mage.healthPoints -= inflictedDmg;
+    warrior.healthPoints -= inflictedDmg;
+    dragon.damage = inflictedDmg;
+  },
+  // 4
+  characters: () => console.log(battleMembers),
 };
 
-gameActions.warriorTurn(warriorDmg);
-// console.log(dragon)
-// console.log(warrior)
-  
+gameActions.dragonRound(dragonDmg);
+gameActions.mageRound(mageStats);
+gameActions.warriorRound(warriorDmg);
+gameActions.characters();
