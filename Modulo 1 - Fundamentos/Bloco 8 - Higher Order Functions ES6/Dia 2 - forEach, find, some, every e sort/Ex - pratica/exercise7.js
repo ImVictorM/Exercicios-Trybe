@@ -71,7 +71,7 @@ function authorUnique() {
     if (birthYearContainer.includes(authorBirthYear)) {
       answer = false;
     }
-    birthYearContainer.push(book.author.birthYear);
+    birthYearContainer.push(authorBirthYear);
   });
   return answer;
 }
