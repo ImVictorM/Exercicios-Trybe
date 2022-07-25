@@ -62,9 +62,19 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
-function someBookWasReleaseOnThe80s() {
+function authorUnique() {
   // escreva seu código aqui
-  return books.some((book) => book.releaseYear >= 1980 && book.releaseYear < 1990);
+  const birthYearContainer = [];
+  let answer = true;
+  books.forEach((book) => {
+    const authorBirthYear = book.author.birthYear;
+    if (birthYearContainer.includes(authorBirthYear)) {
+      answer = false;
+    }
+    birthYearContainer.push(book.author.birthYear);
+  });
+  return answer;
 }
 
-console.log(someBookWasReleaseOnThe80s());
+console.log(authorUnique())
+
