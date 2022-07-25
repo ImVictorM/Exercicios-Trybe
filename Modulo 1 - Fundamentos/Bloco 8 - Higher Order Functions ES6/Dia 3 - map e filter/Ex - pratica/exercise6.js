@@ -62,3 +62,11 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
+
+function oldBooks(booksArray) {
+  const currentYear = new Date().getFullYear();
+  const oldOnes = booksArray.filter((book) => (currentYear - book.releaseYear) > 60);
+  return oldOnes.map((book) => book.name);
+}
+
+console.log(oldBooks(books));
