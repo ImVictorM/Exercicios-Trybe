@@ -63,19 +63,19 @@ const books = [
 
 // Adicione o código do exercício aqui:
 function authorWith3DotsOnName(booksArray) {
-  let bookName = '';
+  let bookName = null;
   booksArray.forEach((book) => {
-    const author = book.author.name;
-    let dotCount = 0;
-    for (let index = 0; index < author.length; index += 1) {
-      if (author[index] === '.') {
-        dotCount += 1;
+    const authorName = book.author.name.replaceAll(' ', '').split('.');
+    let initialCount = 0;
+    for (let index = 0; index < authorName.length; index += 1) {
+      if (index < 3 && authorName[index].length === 1) {
+        initialCount += 1;
       }
     }
-    if (dotCount >= 3) {
+    if (initialCount === 3) {
       bookName = book.name;
     }
-  })
+  });
   return bookName;
 }
 
