@@ -13,7 +13,7 @@ function studentAverage(students, grades) {
     const gradeAvg = grades[index]
       .reduce((sum, grade) => sum + grade) / grades[index].length;
     return {
-      name: student[index],
+      name: student,
       average: gradeAvg,
     }
   })
