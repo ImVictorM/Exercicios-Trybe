@@ -1,7 +1,4 @@
-const getNationality = ({ firstName, nationality }) => {
-  if (!nationality) {
-    return `${firstName} is ${nationality = 'Brazilian'}`;
-  }
+const getNationality = ({ firstName, nationality = 'Brazilian'}) => {
   return `${firstName} is ${nationality}`;
 }
 
