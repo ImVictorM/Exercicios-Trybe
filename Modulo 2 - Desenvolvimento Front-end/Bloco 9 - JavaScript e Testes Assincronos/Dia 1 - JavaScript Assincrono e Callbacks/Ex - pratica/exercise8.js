@@ -42,3 +42,8 @@ function getPokemonDetails(selectedPokemon, callback) {
 
 getPokemonDetails('Bulbasaur', handlePokemonSearch);
 getPokemonDetails('sapatomon', handlePokemonSearch);
+
+module.exports = {
+  getPokemonDetails,
+  handlePokemonSearch,
+};
