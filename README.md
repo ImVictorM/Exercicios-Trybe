@@ -42,12 +42,12 @@ Este repositório contém todas as atividades desenvolvidas por [mim](https://ww
 - [x] Dia 4 - CSS Flexbox - Parte 2
 - [x] Dia 5 - CSS Responsivo - Mobile First
 - [x] Dia 6 - Projeto - Trybewarts
-### Bloco 7 [Introdução à JavaScript ES6 e Testes Unitários](https://github.com/ImVictorM/Exercicios-Trybe/tree/main/Modulo%201%20-%20Fundamentos/Bloco%207%20-%20ES6%20e%20Testes%20Unitarios)
+### Bloco 7 - [Introdução à JavaScript ES6 e Testes Unitários](https://github.com/ImVictorM/Exercicios-Trybe/tree/main/Modulo%201%20-%20Fundamentos/Bloco%207%20-%20ES6%20e%20Testes%20Unitarios)
 - [x] Dia 1 - let, const, arrow functions e template literals
 - [x] Dia 2 - Fluxo de exceção e Objetos
 - [x] Dia 3 - Primeiros passos em Jest
 - [x] Dia 4 - Projeto - JavaScript Testes Unitários
-### Bloco 8 [Higher Order Functions do JavaScript ES6](https://github.com/ImVictorM/Exercicios-Trybe/tree/main/Modulo%201%20-%20Fundamentos/Bloco%208%20-%20Higher%20Order%20Functions%20ES6)
+### Bloco 8 - [Higher Order Functions do JavaScript ES6](https://github.com/ImVictorM/Exercicios-Trybe/tree/main/Modulo%201%20-%20Fundamentos/Bloco%208%20-%20Higher%20Order%20Functions%20ES6)
 - [x] Dia 1 - Introdução a Higher Order Functions
 - [x] Dia 2 - forEach, find, some, every, sort
 - [x] Dia 3 - map e filter
