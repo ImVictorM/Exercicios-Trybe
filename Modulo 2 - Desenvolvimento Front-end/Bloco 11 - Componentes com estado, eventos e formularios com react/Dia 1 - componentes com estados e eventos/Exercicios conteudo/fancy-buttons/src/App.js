@@ -7,28 +7,52 @@ class App extends Component {
     this.pastelLaranja = this.pastelLaranja.bind(this);
     this.pastelMorango = this.pastelMorango.bind(this);
     this.pastelUva = this.pastelUva.bind(this);
+
+    this.state = {
+      contagemUva: 0,
+      contagemLaranja: 0,
+      contagemMorango: 0,
+    }
   }
 
   pastelLaranja() {
     console.log('pastel de laranja');
-    console.log(this);
+    const { contagemLaranja } = this.state;
+    this.setState((estadoInicial, _props) => {
+      return  {
+        contagemLaranja: estadoInicial.contagemLaranja + 1
+      };
+    });
+    console.log(contagemLaranja);
   }
 
   pastelMorango() {
     console.log('pastel de morango');
-    console.log(this);
+    const { contagemMorango } = this.state;
+    this.setState((estadoInicial, _props) => {
+      return {
+        contagemMorango: estadoInicial.contagemMorango + 1
+      };
+    });
+    console.log(contagemMorango);
   }
 
   pastelUva() {
     console.log('pastel de uva');
-    console.log(this);
+    const { contagemUva } = this.state;
+    this.setState((estadoInicial, _props) => {
+      return {
+        contagemUva: estadoInicial.contagemUva + 1
+      };
+    });
+    console.log(contagemUva);
   }
   render() {
     return (
       <section>
-        <button onClick={this.pastelUva}>Click</button>
-        <button onClick={this.pastelLaranja}>Click</button>
-        <button onClick={this.pastelMorango}>Click</button>
+        <button onClick={this.pastelUva}>Uva</button>
+        <button onClick={this.pastelLaranja}>Laranja</button>
+        <button onClick={this.pastelMorango}>Morango</button>
       </section>
     );
   }
