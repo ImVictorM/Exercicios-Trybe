@@ -15,37 +15,57 @@ class App extends Component {
     }
   }
 
-  pastelLaranja() {
-    console.log('pastel de laranja');
-    const { contagemLaranja } = this.state;
-    this.setState((estadoInicial, _props) => {
-      return  {
-        contagemLaranja: estadoInicial.contagemLaranja + 1
-      };
-    });
-    console.log(contagemLaranja);
+  checkEven = (number, target) => {
+    if (number % 2 === 0) {
+      target.style.backgroundColor = 'lime'
+    } else {
+      target.style.backgroundColor = 'white'
+    }
   }
 
-  pastelMorango() {
-    console.log('pastel de morango');
-    const { contagemMorango } = this.state;
-    this.setState((estadoInicial, _props) => {
-      return {
-        contagemMorango: estadoInicial.contagemMorango + 1
-      };
-    });
-    console.log(contagemMorango);
+  pastelLaranja(event) {
+    const { target } = event;
+    this.setState(
+      {
+        contagemLaranja: this.state.contagemLaranja + 1
+      },
+      () => {
+        const { contagemLaranja } = this.state;
+        this.checkEven(contagemLaranja, target)
+        console.log(contagemLaranja)
+        console.log(target.style.backgroundColor);
+      }
+    );
   }
 
-  pastelUva() {
-    console.log('pastel de uva');
-    const { contagemUva } = this.state;
-    this.setState((estadoInicial, _props) => {
-      return {
-        contagemUva: estadoInicial.contagemUva + 1
-      };
-    });
-    console.log(contagemUva);
+  pastelMorango(event) {
+    const { target } = event;
+    this.setState(
+      {
+        contagemMorango: this.state.contagemMorango + 1
+      },
+      () => {
+        const { contagemMorango } = this.state;
+        this.checkEven(contagemMorango, target)
+        console.log(contagemMorango)
+        console.log(target.style.backgroundColor);
+      }
+    );
+  }
+
+  pastelUva(event) {
+    const { target } = event;
+    this.setState(
+      {
+        contagemUva: this.state.contagemUva + 1
+      },
+      () => {
+        const { contagemUva } = this.state;
+        this.checkEven(contagemUva, target)
+        console.log(contagemUva)
+        console.log(target.style.backgroundColor);
+      }
+    );
   }
   render() {
     return (
