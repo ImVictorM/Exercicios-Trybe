@@ -67,7 +67,6 @@ test("testes exercicio de fixação", async () => {
     name: /New Joke/i
   });
 
-  jest.spyOn(global, 'fetch');
   global.fetch.mockResolvedValue({
     json: jest.fn().mockResolvedValue(secondJoke),
   });
