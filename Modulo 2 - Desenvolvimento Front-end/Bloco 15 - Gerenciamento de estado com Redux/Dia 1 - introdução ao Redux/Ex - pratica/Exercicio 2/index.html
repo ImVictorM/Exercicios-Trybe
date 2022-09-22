@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App Trybe</title>
+    <script src="https://unpkg.com/redux@latest/dist/redux.js"></script>
+    <style>
+      body {
+        color: white;
+        background-color: #333;
+        font-family: sans-serif;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Minha Aplicação</h1>
+      <p>Status: Você está <span id="status">Offline</span></p>
+      <button id="toggle-theme">Light Mode</button>
+      <button id="toggle-status">Ficar Online</button>
+    </div>
+    <script>
+      const body = document.getElementsByTagName('body')[0];
+      const statusElement = document.getElementById('status');
+      const themeButton = document.getElementById('toggle-theme');
+      const statusButton = document.getElementById('toggle-status');
+
+      const CHANGE_THEME = 'CHANGE_THEME';
+      const CHANGE_STATUS = 'CHANGE_STATUS'
+      
+      const THEME_INITIAL_STATE = {
+        theme: 'dark',
+      };
+
+      const STATUS_INITIAL_STATE = {
+        status: 'offline',
+      };
+
+
+      themeButton.addEventListener('click', () => {
+        const action = {
+          type: CHANGE_THEME,
+        };
+        store.dispatch(action);
+      });
+
+      statusButton.addEventListener('click', () => {
+        const action = {
+          type: CHANGE_STATUS,
+        };
+        store.dispatch(action);
+      });
+
+      const themeReducer = (state = THEME_INITIAL_STATE, action) => {
+        switch (action.type) {
+          case CHANGE_THEME:
+          const { theme } = state;
+            return theme === 'dark' ? { theme: 'light'} : { theme: 'dark'}
+          default:
+            return state;
+        }
+      };
+
+      const statusReducer = (state = STATUS_INITIAL_STATE, action) => {
+        switch (action.type) {
+          case CHANGE_STATUS:
+            const { status } = state;
+            return status === 'offline' ? {status: 'online'} : {status: 'offline'};
+          default:
+            return state;
+        }
+      };
+
+      const reducers = Redux.combineReducers({
+        statusReducer,
+        themeReducer,
+      });
+
+      const store = Redux.createStore(reducers);
+
+
+      store.subscribe(() => {
+        const {statusReducer: {status}, themeReducer: {theme}} = store.getState();
+        console.log(status);
+        console.log(theme);
+        if (theme === 'dark') {
+          body.style.backgroundColor = '#333333';
+          body.style.color = 'white';
+          themeButton.innerText = 'Light Mode';
+        } else {
+          body.style.backgroundColor = 'white';
+          body.style.color = '#333333';
+          themeButton.innerText = 'Dark Mode';
+        }
+
+        if (status === 'offline') {
+          statusElement.innerText = 'Offline';
+          statusButton.innerText = 'Ficar Online'
+        } else {
+          statusElement.innerText = 'Online'
+          statusButton.innerText = 'Ficar Offline'
+        }
+      })
+    </script>
+  </body>
+</html>
