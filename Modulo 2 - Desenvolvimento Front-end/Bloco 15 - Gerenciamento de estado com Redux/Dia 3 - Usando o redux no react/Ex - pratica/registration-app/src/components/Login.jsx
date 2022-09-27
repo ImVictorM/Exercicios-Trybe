@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import loginAction from '../redux/actions';
+import { logIn } from '../redux/actions';
 
 class Login extends Component {
   
@@ -18,7 +18,7 @@ class Login extends Component {
 
   signIn = () => {
     const { dispatch, history } = this.props;
-    dispatch(loginAction({...this.state}));
+    dispatch(logIn());
     history.push('/customers');
   }
 

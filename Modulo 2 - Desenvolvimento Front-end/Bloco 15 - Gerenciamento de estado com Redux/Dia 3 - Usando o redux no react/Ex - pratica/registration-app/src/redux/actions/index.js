@@ -1,8 +1,15 @@
-import { SAVE_LOGIN_DATA } from "./actionTypes";
+import { SAVE_USER_DATA, LOGIN } from "./actionTypes";
 
-const loginAction = (payload) => ({
-  type: SAVE_LOGIN_DATA,
+const saveUser = (payload) => ({
+  type: SAVE_USER_DATA,
   payload,
 });
 
-export default loginAction;
+const logIn = () => ({
+  type: LOGIN,
+});
+
+export {
+  saveUser,
+  logIn,
+};

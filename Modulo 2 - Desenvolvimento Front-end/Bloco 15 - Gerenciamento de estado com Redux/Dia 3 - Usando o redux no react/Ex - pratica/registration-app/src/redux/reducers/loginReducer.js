@@ -1,18 +1,20 @@
-import { SAVE_LOGIN_DATA } from "../actions/actionTypes";
+import { SAVE_USER_DATA, LOGIN } from "../actions/actionTypes";
 
 const INITIAL_STATE = {
-  users: {},
+  users: [],
+  login: false,
 }
 
 function loginReducer (state = INITIAL_STATE, action) {
-  console.log(action);
   switch (action.type) {
-    case SAVE_LOGIN_DATA:
+    case SAVE_USER_DATA:
       return {
-        users: {
-          ...state.users,
-          ...action.payload
-        }
+        users: [...state.users, {...action.payload} ],
+      }
+    case LOGIN: 
+      return {
+        ...state,
+        login: true,
       }
     default:
       return state;

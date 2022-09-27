@@ -1,5 +1,7 @@
-const SAVE_LOGIN_DATA = 'SAVE_LOGIN_DATA';
+const SAVE_USER_DATA = 'SAVE_USER_DATA';
+const LOGIN = 'LOGIN';
 
 export {
-  SAVE_LOGIN_DATA,
+  SAVE_USER_DATA,
+  LOGIN,
 }
