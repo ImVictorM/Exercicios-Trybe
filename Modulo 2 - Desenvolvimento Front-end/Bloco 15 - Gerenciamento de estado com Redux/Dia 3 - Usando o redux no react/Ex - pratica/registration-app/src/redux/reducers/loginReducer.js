@@ -10,6 +10,7 @@ function loginReducer (state = INITIAL_STATE, action) {
     case SAVE_USER_DATA:
       return {
         users: [...state.users, {...action.payload} ],
+        login: state.login,
       }
     case LOGIN: 
       return {

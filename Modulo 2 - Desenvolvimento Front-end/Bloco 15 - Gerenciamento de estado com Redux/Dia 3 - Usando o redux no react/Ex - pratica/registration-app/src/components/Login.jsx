@@ -16,7 +16,7 @@ class Login extends Component {
     });
   }
 
-  signIn = () => {
+  logIn = () => {
     const { dispatch, history } = this.props;
     dispatch(logIn());
     history.push('/customers');
@@ -48,7 +48,7 @@ class Login extends Component {
             onChange={ this.handleChangle }
           />
         </label>
-        <button type="button" onClick={ this.signIn }>Sign in</button>
+        <button type="button" onClick={ this.logIn }>Sign in</button>
       </div>
     );
   }
