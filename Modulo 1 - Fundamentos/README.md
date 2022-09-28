@@ -1,7 +1,3 @@
-# Projetos da Trybe
-
-Este repositório contém todas as atividades desenvolvidas por [mim](https://www.linkedin.com/in/victor-figueiredo-mendes-2251b5206/) durante minha jornada na [Trybe](https://www.betrybe.com/).
-
 ## Fundamentos do Desenvolvimento Web 
 ### Bloco 1 - [Unix & Shell](https://github.com/ImVictorM/Exercicios-Trybe/tree/main/Modulo%201%20-%20Fundamentos/Bloco%201%20-%20unix%20e%20shell)
 - [x] Dia 3 - Fundamentos do Desenvolvimento Web
