@@ -1,6 +1,6 @@
-# Projetos da Trybe
+# Exercícios da Trybe
 
-Este repositório contém todas as atividades desenvolvidas por [mim](https://www.linkedin.com/in/victor-figueiredo-mendes-2251b5206/) durante minha jornada na [Trybe](https://www.betrybe.com/).
+Este repositório contém todas os exercícios desenvolvidas por [mim](https://www.linkedin.com/in/victor-figueiredo-mendes-2251b5206/) durante minha jornada na [Trybe](https://www.betrybe.com/).
 
 - [x] Fundamentos do Desenvolvimento Web
 - [ ] Desenvolvimento Front-end
