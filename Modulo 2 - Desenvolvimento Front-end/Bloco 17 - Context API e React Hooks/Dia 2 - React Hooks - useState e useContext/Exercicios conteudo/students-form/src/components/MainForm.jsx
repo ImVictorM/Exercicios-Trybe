@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { StudentContext } from '../context/StudentContext'
 
 function MainForm() {
   const [studentInfo, setStudentInfo ] = useState({
@@ -7,14 +8,22 @@ function MainForm() {
     city: '',
     module: '',
   });
-  const { name, age, city } = studentInfo;
+  const { addStudent } = useContext(StudentContext);
 
   const handleChange = ({ target: { name, value }}) => {
-    setStudentInfo({
-      ...studentInfo,
+    setStudentInfo((prevState) => ({
+      ...prevState,
       [name]: value,
-    })
+      })
+    );
   }
+
+  const handleClick = () => {
+    addStudent(studentInfo);
+  }
+
+  const { name, age, city } = studentInfo;
+  
   return (
     <form>
       <label htmlFor="name">
@@ -97,7 +106,7 @@ function MainForm() {
         </label>
     
       </section>
-      <button type="button">Submeter</button>
+      <button onClick={ handleClick } type="button">Submeter</button>
     </form>
   )
 }
