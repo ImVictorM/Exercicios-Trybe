@@ -1,0 +1,11 @@
+# ex - 1
+SELECT FLOOR(RAND() * (20-15+1) + 15);
+
+# ex - 2
+SELECT ROUND(15.7515971, 5);
+
+# ex - 3
+SELECT FLOOR(39.494);
+
+# ex - 4
+SELECT CEIL(85.234);
