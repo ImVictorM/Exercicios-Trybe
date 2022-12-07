@@ -43,11 +43,24 @@ async function createNewFile() {
   } catch (error) {
     console.log(error);
   }
+}
 
+async function addNewCharacter() {
+  try {
+    const characters = JSON.parse(await fs.readFile('./simpsonFamily.json', 'utf-8'));
+    const newCharacter = {
+      id: `${characters.length + 1}`,
+      name: 'Nelson Muntz'
+    };
+    const newList = [...characters, newCharacter];
+    await fs.writeFile('./simpsonFamily.json', JSON.stringify(newList));
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 async function main () {
-  await createNewFile();
+  await addNewCharacter();
 }
 
 main();
