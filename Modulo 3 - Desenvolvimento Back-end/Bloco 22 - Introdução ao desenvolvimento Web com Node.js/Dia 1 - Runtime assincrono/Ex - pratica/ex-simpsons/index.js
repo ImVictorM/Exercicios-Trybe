@@ -21,15 +21,16 @@ async function readCharacters() {
   } catch (error) {
     console.error(error);
   }
- 
 }
+
+async function deleteSpecificCharacters() {
+  const characters = JSON.parse(await fs.readFile('./simpsons.json', 'utf-8'));
+  const newCharacter = characters.filter(({ id }) => Number(id) !== 6 && Number(id) !== 10);
+  await fs.writeFile('./simpsons.json', JSON.stringify(newCharacter));
+}
+
 async function main () {
-  try {
-    console.log(await getCharacterById(100));
-  } catch (error) {
-    console.log(error)
-  }
-  
+  await deleteSpecificCharacters();
 }
 
 main();
