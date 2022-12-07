@@ -25,12 +25,25 @@ async function readCharacters() {
 
 async function deleteSpecificCharacters() {
   const characters = JSON.parse(await fs.readFile('./simpsons.json', 'utf-8'));
-  const newCharacter = characters.filter(({ id }) => Number(id) !== 6 && Number(id) !== 10);
-  await fs.writeFile('./simpsons.json', JSON.stringify(newCharacter));
+  const newCharacters = characters.filter(({ id }) => Number(id) !== 6 && Number(id) !== 10);
+  await fs.writeFile('./simpsons.json', JSON.stringify(newCharacters));
+}
+
+async function createNewFile() {
+  try {
+    const characters = JSON.parse(await fs.readFile('./simpsons.json', 'utf-8'));
+
+    const newCharacters = characters.filter(({ id }) => Number(id) > 0 && Number(id) < 5);
+  
+    await fs.writeFile('./simpsonFamily.json', JSON.stringify(newCharacters))
+  } catch (error) {
+    console.log(error);
+  }
+
 }
 
 async function main () {
-  await deleteSpecificCharacters();
+  await createNewFile();
 }
 
 main();
