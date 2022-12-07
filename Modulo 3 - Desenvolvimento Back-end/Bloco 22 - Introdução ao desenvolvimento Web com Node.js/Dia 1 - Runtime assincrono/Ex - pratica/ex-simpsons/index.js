@@ -24,9 +24,13 @@ async function readCharacters() {
 }
 
 async function deleteSpecificCharacters() {
-  const characters = JSON.parse(await fs.readFile('./simpsons.json', 'utf-8'));
-  const newCharacters = characters.filter(({ id }) => Number(id) !== 6 && Number(id) !== 10);
-  await fs.writeFile('./simpsons.json', JSON.stringify(newCharacters));
+  try {
+    const characters = JSON.parse(await fs.readFile('./simpsons.json', 'utf-8'));
+    const newCharacters = characters.filter(({ id }) => Number(id) !== 6 && Number(id) !== 10);
+    await fs.writeFile('./simpsons.json', JSON.stringify(newCharacters));
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 async function createNewFile() {
