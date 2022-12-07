@@ -59,8 +59,23 @@ async function addNewCharacter() {
   }
 }
 
+async function changeNelson() {
+  try {
+    const characters = JSON.parse((await fs.readFile('./simpsonFamily.json', 'utf-8')));
+    const excludeNelson = characters.filter(({ id }) => Number(id) !== 5);
+    const newCharacter = {
+      id: `${excludeNelson.length + 1}`,
+      name: 'Maggie Simpson'
+    };
+    const newList = [...excludeNelson, newCharacter];
+    await fs.writeFile('./simpsonFamily.json', JSON.stringify(newList));
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 async function main () {
-  await addNewCharacter();
+  await changeNelson();
 }
 
 main();
