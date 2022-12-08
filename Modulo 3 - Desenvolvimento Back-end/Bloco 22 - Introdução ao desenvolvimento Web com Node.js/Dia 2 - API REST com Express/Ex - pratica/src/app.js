@@ -1,5 +1,5 @@
 const express = require('express');
-const { readFile, updateFile, modifyFile } = require('./utils/fileService');
+const { readFile, updateFile, modifyFile, deleteFileData } = require('./utils/fileService');
 
 const app = express();
 
@@ -56,6 +56,21 @@ app.put('/movies/:id', async (req, res) => {
     const { id } = req.params;
     const reqUpdate = req.body;
     await modifyFile('src/movies.json', id, reqUpdate);
+    const movies = await readFile('src/movies.json');
+    return res.status(201).json(movies);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: {
+      status: 500,
+      description: 'Internal Server Error',
+    }});
+  }
+});
+
+app.delete('/movies/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    await deleteFileData('src/movies.json', id);
     const movies = await readFile('src/movies.json');
     return res.status(201).json(movies);
   } catch (error) {

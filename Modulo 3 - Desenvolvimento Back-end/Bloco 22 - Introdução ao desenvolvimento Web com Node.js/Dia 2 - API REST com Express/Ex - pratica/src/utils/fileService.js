@@ -33,8 +33,20 @@ async function modifyFile(path, id, newItem) {
   }
 }
 
+async function deleteFileData(path, id) {
+  try {
+    const fileData = await readFile(path);
+    const updatedFile = fileData.filter((element) => Number(element.id) !== Number(id));
+    await fs.writeFile(path, JSON.stringify(updatedFile));
+  } catch (error) {
+    console.error(error);
+    return error;
+  }
+}
+
 module.exports = {
   readFile,
   updateFile,
-  modifyFile
+  modifyFile,
+  deleteFileData
 }
