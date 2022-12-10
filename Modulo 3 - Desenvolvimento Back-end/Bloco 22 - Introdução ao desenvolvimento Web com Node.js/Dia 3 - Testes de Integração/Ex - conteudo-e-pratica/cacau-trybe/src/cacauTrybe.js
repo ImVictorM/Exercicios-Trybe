@@ -35,7 +35,6 @@ const getChocolatesQuantity = async () => {
   };
 };
 
-getChocolatesQuantity();
 
 module.exports = {
   getAllChocolates,

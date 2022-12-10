@@ -7,6 +7,13 @@ app.get('/chocolates', async (req, res) => {
   res.status(200).json({ chocolates });
 });
 
+app.get('/chocolates/search', async (req, res) => {
+  const { name } = req.query;
+  const chocolates = await cacauTrybe.getAllChocolates();
+  const filteredChocolates = chocolates.filter((choco) => choco.name.includes(name));
+  return res.status(200).json(filteredChocolates);
+});
+
 app.get('/chocolates/total', async (req, res) => {
   try {
     const quantity = await cacauTrybe.getChocolatesQuantity();
@@ -15,7 +22,6 @@ app.get('/chocolates/total', async (req, res) => {
     console.error(error);
     return res.status(500).json({ message: 'internal error' });
   }
-  
 });
 
 app.get('/chocolates/:id', async (req, res) => {
