@@ -7,6 +7,17 @@ app.get('/chocolates', async (req, res) => {
   res.status(200).json({ chocolates });
 });
 
+app.get('/chocolates/total', async (req, res) => {
+  try {
+    const quantity = await cacauTrybe.getChocolatesQuantity();
+    return res.status(200).json(quantity);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: 'internal error' });
+  }
+  
+});
+
 app.get('/chocolates/:id', async (req, res) => {
   const { id } = req.params;
   const chocolate = await cacauTrybe.getChocolateById(Number(id));
@@ -19,5 +30,7 @@ app.get('/chocolates/brand/:brandId', async (req, res) => {
   const chocolates = await cacauTrybe.getChocolatesByBrand(Number(brandId));
   res.status(200).json({ chocolates });
 });
+
+
 
 module.exports = app;

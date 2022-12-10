@@ -133,8 +133,42 @@ describe('Usando o método GET em /chocolates/total', function () {
     const response = await chai
       .request(app)
       .get('/chocolates/total');
+    
     expect(response.status).to.be.equal(200);
     expect(response.body).to.haveOwnProperty('totalChocolates');
-    expect(response.body.totalChocolates).to.be(4);
+    expect(response.body.totalChocolates).to.equal(4);
+  });
+});
+
+describe('Usando o método GET em /chocolates/search', function () {
+  beforeEach(function () {
+    sinon.stub(fs.promises, 'readFile')
+      .resolves(mockFile);
+  });
+
+  afterEach(function () {
+    sinon.restore();
+  });
+  it('É possível pesquisar chocolates por termo', async function () {
+    const response = await chai
+      .request(app)
+      .get('/chocolates/search')
+      .query({ name: 'Mo'});
+
+    const expectResult = [
+      {
+        "id": 3,
+        "name": "Mon Chéri",
+        "brandId": 2
+      },
+      {
+        "id": 4,
+        "name": "Mounds",
+        "brandId": 3
+      }
+    ];
+
+    expect(response.status).to.equal(200);
+    expect(response.body).to.deep.equal(expectResult);
   });
 });
