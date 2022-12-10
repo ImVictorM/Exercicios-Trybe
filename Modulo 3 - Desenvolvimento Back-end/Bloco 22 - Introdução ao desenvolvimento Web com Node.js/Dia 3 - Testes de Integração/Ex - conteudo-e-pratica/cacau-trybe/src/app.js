@@ -8,10 +8,17 @@ app.get('/chocolates', async (req, res) => {
 });
 
 app.get('/chocolates/search', async (req, res) => {
-  const { name } = req.query;
-  const chocolates = await cacauTrybe.getAllChocolates();
-  const filteredChocolates = chocolates.filter((choco) => choco.name.includes(name));
-  return res.status(200).json(filteredChocolates);
+  try {
+    const { name } = req.query;
+    const chocolates = await cacauTrybe.getAllChocolates();
+    const filteredChocolates = chocolates.filter((choco) => choco.name.includes(name));
+    const statusCode = filteredChocolates.length === 0 ? 404 : 200;
+    return res.status(statusCode).json(filteredChocolates);
+  } catch (error) {
+    console.error(error);
+    return res.status(505).json({ message: 'Internal error' });
+  }
+
 });
 
 app.get('/chocolates/total', async (req, res) => {

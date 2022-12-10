@@ -171,4 +171,14 @@ describe('Usando o método GET em /chocolates/search', function () {
     expect(response.status).to.equal(200);
     expect(response.body).to.deep.equal(expectResult);
   });
+
+  it('Retorna um array vazio e codigo 404 quando o termo é invalido', async function () {
+    const response = await chai
+    .request(app)
+    .get('/chocolates/search')
+    .query({ name: 'ZZZ'});
+    
+    expect(response.status).to.equal(404);
+    expect(response.body).to.deep.equal([]);
+  });
 });
