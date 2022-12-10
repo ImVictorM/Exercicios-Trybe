@@ -87,6 +87,52 @@ describe('Usando o método GET em /chocolates/:id para buscar o ID 4', function 
   });
 });
 
+describe('Usando o método PUT em /chocolates/:id', function () {
+  beforeEach(function () {
+    sinon.stub(fs.promises, 'readFile')
+      .resolves(mockFile);
+    sinon.stub(fs.promises, 'writeFile')
+      .resolves();
+  });
+  afterEach(function () {
+    sinon.restore();
+  });
+
+  it('Atualiza o chocolate de id 1', async function () {
+    const response = await chai
+      .request(app)
+      .put('/chocolates/1')
+      .send({ 
+        "name": "Mint Pretty Good",
+        "brandId": 2
+      });
+    
+    expect(response.status).to.equal(200);
+    expect(response.body).to.deep.equal({
+      "chocolate": { 
+        "id": 1,
+        "name": "Mint Pretty Good",
+        "brandId": 2
+      }
+    });
+  });
+
+  it('Da erro com id 555 (inexistente)', async function () {
+    const response = await chai
+      .request(app)
+      .put('/chocolates/555')
+      .send({ 
+        "name": "Mint Pretty Good",
+        "brandId": 2
+      });
+    
+    expect(response.status).to.equal(404);
+    expect(response.body).to.deep.equal({
+      "message": "chocolate not found",
+    });
+  });
+});
+
 describe('Usando o método GET em /chocolates/:id para buscar o ID 99', function () {
   it('Retorna status 404 com a mensagem "Chocolate not found"', async function () {
     const response = await chai
@@ -99,6 +145,14 @@ describe('Usando o método GET em /chocolates/:id para buscar o ID 99', function
 });
 
 describe('Usando o método GET em /chocolates/brand/:brandId para buscar brandId 1', function () {
+  beforeEach(function () {
+    sinon.stub(fs.promises, 'readFile')
+      .resolves(mockFile);
+  });
+
+  afterEach(function () {
+    sinon.restore();
+  });
   it('Retorna os chocolates da marca Lindt & Sprungli', async function () {
     const response = await chai
       .request(app)
@@ -177,7 +231,7 @@ describe('Usando o método GET em /chocolates/search', function () {
     .request(app)
     .get('/chocolates/search')
     .query({ name: 'ZZZ'});
-    
+
     expect(response.status).to.equal(404);
     expect(response.body).to.deep.equal([]);
   });

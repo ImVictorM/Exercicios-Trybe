@@ -35,10 +35,34 @@ const getChocolatesQuantity = async () => {
   };
 };
 
+const updateChocolateById = async (id, updatedItem) => {
+  const path = '/files/cacauTrybeFile.json';
+  const chocolates = await getAllChocolates();
+  const indexToUpdate = chocolates.findIndex((choco) => Number(choco.id) === Number(id)) ;
+  if (indexToUpdate < 0) {
+    return indexToUpdate;
+  } else {
+    const newItem = {
+      id: Number(id),
+      ...updatedItem,
+    }
+    
+    chocolates[indexToUpdate] = newItem;
+    const updatedFile = await readCacauTrybeFile();
+    updatedFile.chocolates = chocolates;
+    await fs.writeFile(join(__dirname, path), JSON.stringify(updatedFile, null, 2));
+    return {
+      chocolate: chocolates[indexToUpdate]
+    };
+  }
+  
+};
+
 
 module.exports = {
   getAllChocolates,
   getChocolateById,
   getChocolatesByBrand,
-  getChocolatesQuantity
+  getChocolatesQuantity,
+  updateChocolateById
 };
