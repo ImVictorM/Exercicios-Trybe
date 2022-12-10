@@ -119,3 +119,22 @@ describe('Usando o método GET em /chocolates/brand/:brandId para buscar brandId
     ]);
   });
 });
+
+describe('Usando o método GET em /chocolates/total', function () {
+  beforeEach(function () {
+    sinon.stub(fs.promises, 'readFile')
+      .resolves(mockFile);
+  });
+
+  afterEach(function () {
+    sinon.restore();
+  });
+  it('Retorna a quantidade de tipos de chocolates que existem na base de dados', async function () {
+    const response = await chai
+      .request(app)
+      .get('/chocolates/total');
+    expect(response.status).to.be.equal(200);
+    expect(response.body).to.haveOwnProperty('totalChocolates');
+    expect(response.body.totalChocolates).to.be(4);
+  });
+});
