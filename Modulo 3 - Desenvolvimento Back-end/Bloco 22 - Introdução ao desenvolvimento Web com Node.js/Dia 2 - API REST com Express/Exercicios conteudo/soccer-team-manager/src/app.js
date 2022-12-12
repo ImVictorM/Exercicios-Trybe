@@ -19,8 +19,8 @@ const teams = [
 
 function existingId (req, res, next) {
   const { id } = req.params;
-  const findTeam = teams.some(({ id: teamId }) => Number(teamId) === Number(id));
-  if (!findTeam) {
+  const teamExists = teams.some(({ id: teamId }) => Number(teamId) === Number(id));
+  if (!teamExists) {
     return res.status(404).json({ message: 'Team not found' });
   }
   return next();
@@ -54,6 +54,7 @@ app.put('/teams/:id', (req, res) => {
 
 
 app.get('/teams/:id', existingId, (req, res) => {
+  const findTeam = teams.find(({ id: teamId }) => Number(teamId) === Number(id));
   return res.status(200).json({ findTeam });
 });
 
