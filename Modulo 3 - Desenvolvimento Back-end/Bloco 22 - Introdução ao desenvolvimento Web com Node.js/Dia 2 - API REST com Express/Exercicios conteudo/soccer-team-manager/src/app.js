@@ -17,6 +17,15 @@ const teams = [
   },
 ];
 
+function existingId (req, res, next) {
+  const { id } = req.params;
+  const findTeam = teams.some(({ id: teamId }) => Number(teamId) === Number(id));
+  if (!findTeam) {
+    return res.status(404).json({ message: 'Team not found' });
+  }
+  return next();
+}
+
 app.get('/', (req, res) => res.status(200).json({ message: 'Olá Mundo!' }));
 
 app.get('/teams', (req, res) => res.status(200).json({ teams }));
@@ -42,14 +51,9 @@ app.put('/teams/:id', (req, res) => {
   return res.status(200).json({ updateTeam });
 });
 
-app.get('/teams/:id', (req, res) => {
-  const { id } = req.params;
-  const findTeam = teams.find(({ id: teamId }) => Number(teamId) === Number(id));
 
-  if (!findTeam) {
-    return res.status(404).json({ message: 'Team not found' });
-  }
 
+app.get('/teams/:id', existingId, (req, res) => {
   return res.status(200).json({ findTeam });
 });
 
