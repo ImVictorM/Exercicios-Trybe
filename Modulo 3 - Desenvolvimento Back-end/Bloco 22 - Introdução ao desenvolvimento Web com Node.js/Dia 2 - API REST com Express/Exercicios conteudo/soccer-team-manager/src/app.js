@@ -21,9 +21,18 @@ function existingId (req, res, next) {
   const { id } = req.params;
   const teamExists = teams.some(({ id: teamId }) => Number(teamId) === Number(id));
   if (!teamExists) {
-    return res.status(404).json({ message: 'Team not found' });
+    return res.status(400).json({ message: 'Team not found, id must be a valid number' });
   }
   return next();
+}
+
+function validateTeam (req, res, next) {
+  const requiredProperties = ['name', 'initials'];
+  if (requiredProperties.every((property) => property in req.body)) {
+    next();
+  } else {
+    res.sendStatus(400);
+  }
 }
 
 app.get('/', (req, res) => res.status(200).json({ message: 'Olá Mundo!' }));
@@ -36,14 +45,10 @@ app.post('/teams', (req, res) => {
   res.status(201).json({ team: newTeam });
 });
 
-app.put('/teams/:id', (req, res) => {
+app.put('/teams/:id', existingId, validateTeam, (req, res) => {
   const { id } = req.params;
   const { name, initials } = req.body;
   const updateTeam = teams.find(({ id: teamId }) => Number(teamId) === Number(id));
-
-  if (!updateTeam) {
-    return res.status(404).json({ message: 'Team not found' });
-  }
 
   updateTeam.name = name;
   updateTeam.initials = initials;
@@ -54,11 +59,12 @@ app.put('/teams/:id', (req, res) => {
 
 
 app.get('/teams/:id', existingId, (req, res) => {
+  const { id } = req.params;
   const findTeam = teams.find(({ id: teamId }) => Number(teamId) === Number(id));
   return res.status(200).json({ findTeam });
 });
 
-app.delete('/teams/:id', (req, res) => {
+app.delete('/teams/:id', existingId, (req, res) => {
   const { id } = req.params;
 
   const arrayPosition = teams.findIndex((team) => team.id === Number(id));
