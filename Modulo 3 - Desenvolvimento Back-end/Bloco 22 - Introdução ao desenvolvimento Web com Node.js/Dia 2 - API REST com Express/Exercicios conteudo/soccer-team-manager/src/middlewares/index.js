@@ -1,3 +1,5 @@
+const { teams } = require('../data/teams');
+
 function existingId (req, res, next) {
   const { id } = req.params;
   const teamExists = teams.some(({ id: teamId }) => Number(teamId) === Number(id));
