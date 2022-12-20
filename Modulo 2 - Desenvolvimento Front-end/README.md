@@ -25,7 +25,23 @@
 - [x] Dia 3 - Testando React Router
 - [x] Dia 4 - Projeto - Testes em React
 
+### Bloco 15 - [Gerenciamento de estado com redux](https://github.com/ImVictorM/Exercicios-Trybe/tree/main/Modulo%202%20-%20Desenvolvimento%20Front-end/Bloco%2015%20-%20Gerenciamento%20de%20estado%20com%20Redux)
+- [x] Dia 1 - Introdução ao Redux - O estado global da aplicação
+- [x] Dia 2 - Usando o Redux no React
+- [x] Dia 3 - Usando o Redux no React - Prática
+- [x] Dia 4 - Usando o Redux no React - Actions Assíncronas
+- [x] Dia 5 - Testes em React-Redux
+- [x] Dia 6 - Projeto - Trybe Wallet
 
+### Bloco 16 - [Projeto Jogo de Trivia](https://github.com/ImVictorM/Trivia-Game)
+- [x] Dia 1 - Projeto - Jogo de Trivia
 
+### Bloco 17 - [Context API e React Hooks](https://github.com/ImVictorM/Exercicios-Trybe/tree/main/Modulo%202%20-%20Desenvolvimento%20Front-end/Bloco%2017%20-%20Context%20API%20e%20React%20Hooks)
+- [x] Dia 1 - React Hooks - useState e useEffect
+- [x] Dia 2 - Context API
+- [x] Dia 3 - Custom Hooks
+- [x] Dia 4 - Projeto - StarWars Datatable com Context API e Hooks
 
+### Bloco 18 - [Projeto App de Receitas](https://github.com/ImVictorM/Recipes-App)
+- [x] Dia 1 - Projeto - App de Receitas
 
