@@ -19,7 +19,26 @@ async function getById(id) {
   };
 }
 
+async function update(id, { title, author, pageQuantity }) {
+  const notFoundError = await getById(id);
+  if (notFoundError.type) {
+    return notFoundError;
+  }
+  const updateResponse = await Book.update({
+    title,
+    author,
+    pageQuantity,
+  }, {
+    where: { 
+      id: Number(id),
+    }
+  });
+
+  return updateResponse;
+}
+
 module.exports = {
   getAll,
   getById,
-}
+  update,
+};
