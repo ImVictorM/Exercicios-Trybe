@@ -45,9 +45,29 @@ async function create(newBook) {
   return createResponse;
 }
 
+async function remove(id) {
+  try {
+    await Book.destroy({
+      where: {
+        id: Number(id),
+      }
+    });
+    return {
+      type: null,
+      message: 'Removed successfully',
+    };
+  } catch (error) {
+    return {
+      type: 'SERVER_ERROR',
+      message: 'Something went wrong',
+    };
+  }
+}
+
 module.exports = {
   getAll,
   getById,
   update,
   create,
+  remove,
 };

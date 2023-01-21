@@ -33,9 +33,19 @@ async function create(req, res) {
   return res.status(201).json(createResponse);
 }
 
+async function remove(req, res) {
+  const { params: { id } } = req;
+  const { type, message } = await BooksService.remove(id);
+  if (type) {
+    return res.status(500).json({ message });
+  }
+  return res.status(200).json(message);
+}
+
 module.exports = {
   getAll,
   getById,
   update,
   create,
+  remove,
 };
