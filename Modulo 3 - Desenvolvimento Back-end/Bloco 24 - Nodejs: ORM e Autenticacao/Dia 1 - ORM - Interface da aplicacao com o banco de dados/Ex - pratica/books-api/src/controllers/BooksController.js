@@ -24,11 +24,18 @@ async function update(req, res) {
   if (type) {
     return res.status(404).json({ message });
   }
-  return res.status(404).json(message);
+  return res.status(200).json(message);
+}
+
+async function create(req, res) {
+  const { body } = req;
+  const createResponse = await BooksService.create(body);
+  return res.status(201).json(createResponse);
 }
 
 module.exports = {
   getAll,
   getById,
   update,
+  create,
 };

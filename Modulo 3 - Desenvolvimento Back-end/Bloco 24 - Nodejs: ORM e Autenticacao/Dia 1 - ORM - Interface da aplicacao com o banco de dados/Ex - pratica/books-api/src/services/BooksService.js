@@ -24,7 +24,7 @@ async function update(id, { title, author, pageQuantity }) {
   if (notFoundError.type) {
     return notFoundError;
   }
-  const updateResponse = await Book.update({
+  await Book.update({
     title,
     author,
     pageQuantity,
@@ -34,11 +34,20 @@ async function update(id, { title, author, pageQuantity }) {
     }
   });
 
-  return updateResponse;
+  return {
+    type: null,
+    message: 'Book updated!'
+  };
+}
+
+async function create(newBook) {
+  const createResponse = await Book.create(newBook);
+  return createResponse;
 }
 
 module.exports = {
   getAll,
   getById,
   update,
+  create,
 };
