@@ -11,6 +11,14 @@ const getAll = async () => {
   return users;
 };
 
+const getById = async (id) => {
+  const employee = await Employee.findOne({
+    where: { id },
+  });
+  return employee;
+}
+
 module.exports = { 
-  getAll 
+  getAll,
+  getById,
 };
