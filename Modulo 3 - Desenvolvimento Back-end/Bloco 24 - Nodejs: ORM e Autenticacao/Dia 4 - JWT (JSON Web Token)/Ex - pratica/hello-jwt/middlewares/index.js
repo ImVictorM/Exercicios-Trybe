@@ -1,9 +1,11 @@
 const error = require('./error');
 const login = require('./login');
-const validateToken = require('./validateToken');
+const auth = require('./auth');
+const admin = require('./admin');
 
 module.exports = {
   error,
   login,
-  validateToken,
+  auth,
+  admin,
 };
