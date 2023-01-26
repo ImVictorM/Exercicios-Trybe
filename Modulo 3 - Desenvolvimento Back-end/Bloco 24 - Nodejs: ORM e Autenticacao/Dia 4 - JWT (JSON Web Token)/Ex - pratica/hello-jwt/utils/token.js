@@ -7,11 +7,21 @@ const jwtConfig = {
   expiresIn: '1h',
 };
 
+function isAdmin({ password, username }) {
+  const ADMIN_USERNAME = 'admin';
+  const ADMIN_PASSWORD = 's3nh4S3gur4???';
+
+  if(password === ADMIN_PASSWORD && username === ADMIN_USERNAME) {
+    return true;
+  }
+  return false;
+}
+
 function encode(data) {
   try {
     const payload = {
       ...data,
-      admin: false,
+      admin: isAdmin(data),
     };
     const token = jwt.sign(payload, JWT_SECRET, jwtConfig);
     return token;
