@@ -38,6 +38,10 @@ export function getTrapezeArea(
   height: number,
   biggerBase: number,
   smallerBase: number
-) {
+): number {
   return ((biggerBase + smallerBase) * height) / 2;
+}
+
+export function getCircleArea(radius: number): number {
+  return (radius ** 2)  * Math.PI;
 }

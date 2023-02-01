@@ -39,3 +39,9 @@ console.log("\nVERIFICA A função getTrapezeArea:");
 console.log(`- B=100cm, b=70cm e h=50cm: ${Ex.getTrapezeArea(50, 100, 70)}`);
 console.log(`- B=75cm, b=50cm e h=35cm: ${Ex.getTrapezeArea(35, 75, 50)}`);
 console.log(`- B=150cm, b=120cm e h=80cm: ${Ex.getTrapezeArea(80, 150, 120)}`);
+
+console.log("\nVERIFICA A função getTrapezeArea:");
+
+console.log(`- R=25cm: ${Ex.getCircleArea(25)}`);
+console.log(`- R=100cm: ${Ex.getCircleArea(100)}`);
+console.log(`- R=12,5cm: ${Ex.getCircleArea(12.5)}`);
