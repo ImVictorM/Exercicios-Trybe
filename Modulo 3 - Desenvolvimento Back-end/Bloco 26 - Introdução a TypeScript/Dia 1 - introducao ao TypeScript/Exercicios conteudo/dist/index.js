@@ -43,3 +43,7 @@ console.log("\nVERIFICA A função getLozangeArea:");
 console.log(`- 32cm e 18cm: ${Ex.getLozengeArea(32, 18)}`);
 console.log(`- 200cm e 50cm: ${Ex.getLozengeArea(200, 50)}`);
 console.log(`- 75cm e 25cm: ${Ex.getLozengeArea(75, 25)}`);
+console.log("\nVERIFICA A função getTrapezeArea:");
+console.log(`- B=100cm, b=70cm e h=50cm: ${Ex.getTrapezeArea(50, 100, 70)}`);
+console.log(`- B=75cm, b=50cm e h=35cm: ${Ex.getTrapezeArea(35, 75, 50)}`);
+console.log(`- B=150cm, b=120cm e h=80cm: ${Ex.getTrapezeArea(80, 150, 120)}`);

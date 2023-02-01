@@ -33,3 +33,11 @@ export function getLozengeArea(
 ): number {
   return (biggerDiagonal * smallerDiagonal) / 2;
 }
+
+export function getTrapezeArea(
+  height: number,
+  biggerBase: number,
+  smallerBase: number
+) {
+  return ((biggerBase + smallerBase) * height) / 2;
+}
