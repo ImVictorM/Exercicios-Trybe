@@ -39,3 +39,7 @@ console.log("\nVERIFICA A EXISTÊNCIA DE TRIÂNGULOS CUJOS LADOS TÊM:");
 console.log(`- 10cm, 5cm e 3cm: ${Ex.triangleCheck(10, 5, 3)}`);
 console.log(`- 10cm, 5cm e 3cm: ${Ex.triangleCheck(10, 5, 8)}`);
 console.log(`- 10cm, 5cm e 3cm: ${Ex.triangleCheck(30, 30, 30)}`);
+console.log("\nVERIFICA A função getLozangeArea:");
+console.log(`- 32cm e 18cm: ${Ex.getLozengeArea(32, 18)}`);
+console.log(`- 200cm e 50cm: ${Ex.getLozengeArea(200, 50)}`);
+console.log(`- 75cm e 25cm: ${Ex.getLozengeArea(75, 25)}`);

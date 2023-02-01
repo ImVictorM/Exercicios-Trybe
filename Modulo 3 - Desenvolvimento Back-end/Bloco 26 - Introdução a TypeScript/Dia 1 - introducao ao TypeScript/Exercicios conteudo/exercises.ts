@@ -26,3 +26,10 @@ export function triangleCheck(
   const checkSideC = (sideA - sideB) < sideC && sideC < (sideA + sideB);
   return checkSideA && checkSideB && checkSideC;
 }
+
+export function getLozengeArea(
+  biggerDiagonal: number,
+  smallerDiagonal: number
+): number {
+  return (biggerDiagonal * smallerDiagonal) / 2;
+}
