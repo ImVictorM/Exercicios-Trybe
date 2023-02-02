@@ -1,3 +1,5 @@
+const execMass = require('./exec');
+
 function convertMass(value:number, baseUnit:string, unitToConvert:string): number {
   const massUnits: string[] = ['kg', 'hg', 'dag', 'g', 'dg', 'cg', 'mg'];
   const baseIndex: number = massUnits.indexOf(baseUnit);
@@ -6,4 +8,4 @@ function convertMass(value:number, baseUnit:string, unitToConvert:string): numbe
   return value * (Math.pow(10, expoent));
 }
 
-console.log(convertMass(1, 'g', 'mg'));
+execMass(convertMass);

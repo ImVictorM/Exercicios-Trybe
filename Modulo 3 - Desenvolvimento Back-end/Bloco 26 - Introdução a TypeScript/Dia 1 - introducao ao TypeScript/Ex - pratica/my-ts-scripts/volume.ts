@@ -1,3 +1,5 @@
+const execVolume = require('./exec');
+
 function convertVolume(
   value: number,
   baseUnit: string,
@@ -11,4 +13,4 @@ function convertVolume(
   return value * (Math.pow(1000, exponent));
 }
 
-console.log(convertVolume(1, 'km', 'hm'));
+execVolume(convertVolume);

@@ -1,3 +1,5 @@
+const execLength = require('./exec');
+
 function convert(value: number, baseUnit: string, toConvert: string): number {
   const measurementUnits = ['km', 'hm', 'dam', 'm', 'dm', 'cm', 'mm'];
   const baseIndex = measurementUnits.indexOf(baseUnit);
@@ -7,4 +9,4 @@ function convert(value: number, baseUnit: string, toConvert: string): number {
   return value * (Math.pow(10, exponent));
 }
 
-console.log(convert(6, 'm', 'm'));
+execLength(convert);

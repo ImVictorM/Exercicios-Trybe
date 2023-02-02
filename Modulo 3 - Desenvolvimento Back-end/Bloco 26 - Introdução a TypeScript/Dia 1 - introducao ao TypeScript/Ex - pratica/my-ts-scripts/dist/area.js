@@ -1,4 +1,5 @@
 "use strict";
+const execArea = require('./exec');
 function convertArea(value, baseUnit, unitToConvert) {
     const squareAreaUnits = ['km', 'hm', 'dam', 'm', 'dm', 'cm', 'mm'];
     const baseIndex = squareAreaUnits.indexOf(baseUnit);
@@ -6,4 +7,4 @@ function convertArea(value, baseUnit, unitToConvert) {
     const expoent = toConvertIndex - baseIndex;
     return value * (Math.pow(100, expoent));
 }
-console.log(convertArea(1, 'km', 'hm'));
+execArea(convertArea);
