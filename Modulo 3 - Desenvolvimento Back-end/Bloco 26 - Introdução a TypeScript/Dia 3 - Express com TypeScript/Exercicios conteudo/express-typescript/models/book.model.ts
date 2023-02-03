@@ -41,6 +41,16 @@ export default class BookModel {
     );
   }
 
+  public async updatePartially(id: number, book: Partial<Book>): Promise<Book | null> {
+    const keys = Object.keys(book);
+    const values = Object.values(book);
+    const colums = keys.map((key) => `${key} = ?`);
+    const query = `UPDATE books SET ${colums.join(', ')} WHERE id = ?`
+    await this.connection.execute(query, [...values, id]);
+    const updatedBook = await this.getById(id);
+    return updatedBook || null;
+  }
+
   public async remove(id: number) {
     await this.connection.execute(
       'DELETE FROM books WHERE id=?',

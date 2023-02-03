@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import statusCodes from '../statusCodes';
 import BookService from '../services/books.service';
+import Book from '../interfaces/book.interface';
 
 class BooksController {
   constructor(private bookService = new BookService()) { }
@@ -44,6 +45,12 @@ class BooksController {
     res.status(statusCodes.NO_CONTENT).end();
   };
 
+  public updatePartially = async (req: Request, res: Response) => {
+    const id = Number(req.params.id);
+    const book = req.body as Partial<Book>;
+    const updatedBook = await this.bookService.updatePartially(id, book);
+    return res.status(statusCodes.OK).json(updatedBook);
+  }
 }
 
 export default BooksController;
