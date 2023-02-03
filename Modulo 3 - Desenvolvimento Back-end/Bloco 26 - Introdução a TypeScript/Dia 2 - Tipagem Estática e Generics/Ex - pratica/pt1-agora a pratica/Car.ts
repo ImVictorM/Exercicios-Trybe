@@ -4,7 +4,7 @@ interface Car {
   doors: number,
   honk(): void,
   turnOff(): void,
-  speedUp(): void,
+  speedUp(meters:number): void,
   speedDown(): void,
   stop(): void,
   turn(direction:string): void,
@@ -22,8 +22,8 @@ class Car {
   turnOff(): void {
     console.log('Car status: OFF');
   }
-  speedUp(): void {
-    console.log('Car status: Speeding up...');
+  speedUp(meters: number): void {
+    console.log(`Car status: Speeding up for ${meters}...`);
   }
   speedDown(): void {
     console.log('Car status: Slowing down...');
@@ -35,3 +35,31 @@ class Car {
     console.log(`Turning ${direction}`);
   }
 };
+
+const gol = new Car('volkswagen', 'silver', 4)
+
+gol.speedUp(590);
+gol.speedDown();
+gol.turn('left');
+gol.speedUp(190);
+gol.speedDown();
+gol.turn('right');
+gol.speedUp(1490);
+gol.speedDown();
+gol.turn('right');
+gol.speedUp(390);
+gol.speedDown();
+gol.stop();
+
+gol.speedUp(290);
+gol.speedDown();
+gol.turn('right');
+gol.speedUp(2190);
+gol.speedDown();
+gol.turn('left');
+gol.speedUp(390);
+gol.speedDown();
+gol.turn('right');
+gol.speedUp(90);
+gol.speedDown();
+gol.stop();
