@@ -15,4 +15,15 @@ class student {
     this._testResults = testResults;
     this._academicWorkResults = academicWorkResults;
   }
+
+  public testResultsSum(): number {
+    const total = this._testResults.reduce((acc, curr) => acc += curr);
+    return total;
+  }
+
+  public testAvg(): number {
+    const testsSum = this.testResultsSum();
+    const avg = testsSum / this._testResults.length;
+    return avg;
+  }
 }
