@@ -4,4 +4,8 @@ export default class Client {
   constructor(name: string) {
     this._name = name;
   }
+
+  get name(): string {
+    return this._name;
+  }
 }

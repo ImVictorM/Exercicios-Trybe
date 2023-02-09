@@ -16,6 +16,18 @@ class student {
     this._academicWorkResults = academicWorkResults;
   }
 
+  get name(): string {
+    return this._name;
+  }
+
+  get enrollment(): string {
+    return this._enrollment;
+  }
+
+  get academicWorkResults(): [number, number] {
+    return this._academicWorkResults;
+  }
+
   public testResultsSum(): number {
     const total = this._testResults.reduce((acc, curr) => acc += curr);
     return total;
