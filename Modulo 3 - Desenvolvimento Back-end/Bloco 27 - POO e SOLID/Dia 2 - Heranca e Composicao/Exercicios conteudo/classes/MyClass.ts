@@ -1,4 +1,4 @@
-import MyInterface from "./MyInterface";
+import MyInterface from "../interfaces/MyInterface";
 
 class MyClass implements MyInterface {
   constructor(
