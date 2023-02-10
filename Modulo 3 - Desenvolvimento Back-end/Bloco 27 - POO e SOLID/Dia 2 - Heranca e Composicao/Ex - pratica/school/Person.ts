@@ -30,11 +30,18 @@ export default class Person {
   };
 }
 
+// testes
 const date = new Date('2005-05-10');
-const person = new Person('jorge henrique', date);
+const person1 = new Person('jorge Henrique', date);
+const person2 = new Person('Roberta Suarez', date);
 
-person.name = 'jão';
-person.birthDate = new Date('2021-05-10');
+person1.name = 'jão';
+person1.birthDate = new Date('2021-05-10');
+person2.name = 'robertinha'
+person2.birthDate = new Date('2021-05-10');
 
-console.log(person.birthDate);
-console.log(person.name);
+// console.log(person1.birthDate);
+// console.log(person1.name);
+// console.log(person2.birthDate);
+// console.log(person2.name);
+
