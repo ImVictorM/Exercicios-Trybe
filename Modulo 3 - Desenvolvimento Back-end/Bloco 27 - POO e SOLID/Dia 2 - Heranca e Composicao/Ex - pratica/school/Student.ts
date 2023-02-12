@@ -63,7 +63,7 @@ class student extends Person {
     let enrollment = '';
     const CHARACTERS = 'qwertyuiopasdfghjklzxcvbnm1234567890QWERTYUIOPASDFGHJKLZXCVBNM';
     for (let index = 0; enrollment.length <= 15; index += 1) {
-      var character = CHARACTERS[Math.floor(Math.random()*CHARACTERS.length)];
+      const character = CHARACTERS[Math.floor(Math.random()*CHARACTERS.length)];
       enrollment += character
     }
     return enrollment;

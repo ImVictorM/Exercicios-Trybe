@@ -1,5 +1,5 @@
 export default class Person {
-  constructor(private _name: string, private _birthDate: Date) {
+  constructor(protected _name: string, protected _birthDate: Date) {
     this.name = _name;
     this.birthDate = _birthDate; 
   }

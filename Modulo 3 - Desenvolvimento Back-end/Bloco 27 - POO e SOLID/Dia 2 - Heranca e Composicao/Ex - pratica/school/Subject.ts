@@ -17,10 +17,10 @@ export default class Subject {
 
 // tests
 
-const mathSub = new Subject('math');
-const historySub = new Subject('history');
-const philosophySub = new Subject('philosofy');
+// const mathSub = new Subject('math');
+// const historySub = new Subject('history');
+// const philosophySub = new Subject('philosofy');
 
-console.log(mathSub.name);
-console.log(historySub.name = 'as');
-console.log(philosophySub.name = 'asf');
+// console.log(mathSub.name);
+// console.log(historySub.name = 'as');
+// console.log(philosophySub.name = 'asf');
