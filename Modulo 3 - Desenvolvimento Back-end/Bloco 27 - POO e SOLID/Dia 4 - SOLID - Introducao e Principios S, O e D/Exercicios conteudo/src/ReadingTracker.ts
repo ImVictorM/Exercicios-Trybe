@@ -1,11 +1,15 @@
-// eslint-disable-next-line import/no-unresolved, import/extensions
-import progressNotification from './utils/notifications';
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
 
-class ReadingTracker {
+import EmailNotification from './EmailNotification';
+import Notificator from './interfaces/Notificator';
+
+export default class ReadingTracker {
   private readingGoal: number;
   private booksRead: number;
-
-  constructor(readingGoal: number) {
+  notificator: Notificator;
+  constructor(readingGoal: number, email: string) {
+    this.notificator = new EmailNotification(email);
     this.readingGoal = readingGoal;
     this.booksRead = 0;
   }
@@ -13,17 +17,12 @@ class ReadingTracker {
   trackReadings(readsCount: number): void {
     this.booksRead += readsCount;
     if (this.booksRead >= this.readingGoal) {
-      progressNotification(
+      this.notificator.sendNotification(
         'Congratulations! You\'ve reached your reading goal!',
       );
       return;
     }
-    progressNotification(
-      'There are still some books to go!',
-    );
+    this.notificator.sendNotification('There are still some books to go!');
   }
+  // Aqui viriam mais métodos, que fogem o escopo deste exercício
 }
-
-const readTracker = new ReadingTracker(20);
-readTracker.trackReadings(12);
-readTracker.trackReadings(9);
