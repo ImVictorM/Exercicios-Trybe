@@ -1,7 +1,9 @@
-export interface IVehicle {
+export interface IGroundVehicle {
   drive(): void;
 }
 
-export interface IFuturisticVehicle extends IVehicle {
+export interface IAirVehicle {
   fly(): void;
 }
+
+export interface IFuturisticVehicle extends IAirVehicle, IGroundVehicle {};
