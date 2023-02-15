@@ -2,6 +2,10 @@ import fs from 'fs/promises';
 import { IModel } from './interfaces/IModel';
 import IPlant from './interfaces/IPlant';
 
+interface IOpsInfo {
+  createdPlants: number
+}
+
 class PlantModel implements IModel<IPlant> {
   private plantsFilePath: string;
 
@@ -10,6 +14,15 @@ class PlantModel implements IModel<IPlant> {
   constructor(plantsFilePath: string, opsFilePath: string) {
     this.plantsFilePath = plantsFilePath;
     this.opsFilePath = opsFilePath;
+  }
+
+  private async updateOpsInfo(incrementAmount = 1): Promise<number> {
+    const dataRaw = await fs.readFile(this.opsFilePath, { encoding: 'utf8' });
+    const opsInfo: IOpsInfo = JSON.parse(dataRaw);
+    opsInfo.createdPlants += incrementAmount;
+
+    await fs.writeFile(this.opsFilePath, JSON.stringify(opsInfo, null, 2));
+    return opsInfo.createdPlants;
   }
 
   async getAll(): Promise<IPlant[]> {
@@ -22,8 +35,16 @@ class PlantModel implements IModel<IPlant> {
     throw new Error('Method not implemented.');
   }
 
-  create(arg: Omit<IPlant, 'id'>): Promise<IPlant> {
-    throw new Error('Method not implemented.');
+  async create(plant: Omit<IPlant, 'id'>): Promise<IPlant> {
+    const dataRaw = await fs.readFile(this.plantsFilePath, { encoding: 'utf8' });
+    const plants: IPlant[] = JSON.parse(dataRaw);
+
+    const newPlantId = await this.updateOpsInfo(1);
+    const newPlant = { id: newPlantId, ...plant };
+    plants.push(newPlant);
+
+    await fs.writeFile(this.plantsFilePath, JSON.stringify(plants, null, 2));
+    return newPlant;
   }
 
   update(arg: IPlant): Promise<IPlant> {

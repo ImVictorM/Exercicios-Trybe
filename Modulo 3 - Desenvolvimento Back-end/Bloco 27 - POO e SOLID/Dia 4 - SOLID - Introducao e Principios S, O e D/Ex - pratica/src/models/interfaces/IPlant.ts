@@ -6,3 +6,5 @@ export default interface IPlant {
   size: number,
   waterFrequency: number,
 }
+
+export type INewPlant = Omit<IPlant, 'id' | 'waterFrequency'>;
