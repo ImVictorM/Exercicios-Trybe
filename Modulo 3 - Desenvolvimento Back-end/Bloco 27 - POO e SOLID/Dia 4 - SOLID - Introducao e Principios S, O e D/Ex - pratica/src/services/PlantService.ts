@@ -1,15 +1,9 @@
 import fs from 'fs/promises';
 import path from 'path';
 import HttpException from '../exceptions/HttpException';
-
-interface IPlant {
-  id: number,
-  breed: string,
-  needsSun: boolean,
-  origin: string,
-  size: number,
-  waterFrequency: number,
-}
+import { IModel } from '../models/interfaces/IModel';
+import IPlant from '../models/interfaces/IPlant';
+import PlantModel from '../models/PlantModel';
 
 type INewPlant = Omit<IPlant, 'id' | 'waterFrequency'>;
 
@@ -22,6 +16,12 @@ class PlantService {
 
   private readonly opsFile = path.join(__dirname, '..', 'models', 'database', 'opsInfo.json');
 
+  private model: IModel<IPlant>;
+
+  constructor(model?: IModel<IPlant>) {
+    this.model = model || new PlantModel(this.plantsFile, this.opsFile);
+  }
+
   private async updateOpsInfo(incrementAmount = 1): Promise<number> {
     const dataRaw = await fs.readFile(this.opsFile, { encoding: 'utf8' });
     const opsInfo: IOpsInfo = JSON.parse(dataRaw);
@@ -33,9 +33,7 @@ class PlantService {
   }
 
   public async getAll(): Promise<IPlant[]> {
-    const dataRaw = await fs.readFile(this.plantsFile, { encoding: 'utf8' });
-    const plants: IPlant[] = JSON.parse(dataRaw);
-    return plants;
+    return this.model.getAll();
   }
 
   public async create(plant: INewPlant): Promise<IPlant> {
