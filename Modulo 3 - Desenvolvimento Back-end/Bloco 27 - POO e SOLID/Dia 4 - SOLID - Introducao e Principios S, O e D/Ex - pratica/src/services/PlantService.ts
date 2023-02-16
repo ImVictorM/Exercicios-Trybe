@@ -23,6 +23,21 @@ class PlantService {
     const createdPlant = await this.model.create({ waterFrequency, ...plant });
     return createdPlant;
   }
+
+  public async getById(id: string): Promise<IPlant> {
+    const plant = await this.model.getById(id);
+    return plant as IPlant;
+  }
+
+  public async update(plant: IPlant): Promise<IPlant> {
+    const updatedPlant = await this.model.update(plant);
+    return updatedPlant;
+  }
+
+  public async removeById(id: string): Promise<boolean> {
+    const response = await this.model.removeById(id);
+    return response;
+  }
 }
 
 export default PlantService;

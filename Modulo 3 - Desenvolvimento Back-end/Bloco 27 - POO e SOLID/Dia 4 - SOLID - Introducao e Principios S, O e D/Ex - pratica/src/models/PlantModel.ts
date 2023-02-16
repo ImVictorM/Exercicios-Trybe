@@ -53,7 +53,6 @@ class PlantModel implements IModel<IPlant> {
     const plants = await this.getAll();
     const plantToUpdateIndex = plants.findIndex((p) => p.id === id);
     plants.splice(plantToUpdateIndex, 1, plant);
-
     await fs.writeFile(this.plantsFilePath, JSON.stringify(plants, null, 2));
     const updatedPlant = await this.getById(id.toString());
     return updatedPlant as IPlant;
