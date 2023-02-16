@@ -25,19 +25,20 @@ class PlantModel implements IModel<IPlant> {
     return opsInfo.createdPlants;
   }
 
-  async getAll(): Promise<IPlant[]> {
+  public async getAll(): Promise<IPlant[]> {
     const rawData = await fs.readFile(this.plantsFilePath, 'utf-8');
     const plants: IPlant[] = JSON.parse(rawData);
     return plants;
   }
 
-  getById(id: string): Promise<IPlant | null> {
-    throw new Error('Method not implemented.');
+  public async getById(id: string): Promise<IPlant | null> {
+    const plants = await this.getAll();
+    const foundPlant = plants.find((plant) => plant.id === Number(id));
+    return foundPlant || null;
   }
 
-  async create(plant: Omit<IPlant, 'id'>): Promise<IPlant> {
-    const dataRaw = await fs.readFile(this.plantsFilePath, { encoding: 'utf8' });
-    const plants: IPlant[] = JSON.parse(dataRaw);
+  public async create(plant: Omit<IPlant, 'id'>): Promise<IPlant> {
+    const plants = await this.getAll();
 
     const newPlantId = await this.updateOpsInfo(1);
     const newPlant = { id: newPlantId, ...plant };
@@ -47,12 +48,24 @@ class PlantModel implements IModel<IPlant> {
     return newPlant;
   }
 
-  update(arg: IPlant): Promise<IPlant> {
-    throw new Error('Method not implemented.');
+  public async update(plant: IPlant): Promise<IPlant> {
+    const { id } = plant;
+    const plants = await this.getAll();
+    const plantToUpdateIndex = plants.findIndex((p) => p.id === id);
+    plants.splice(plantToUpdateIndex, 1, plant);
+
+    await fs.writeFile(this.plantsFilePath, JSON.stringify(plants, null, 2));
+    const updatedPlant = await this.getById(id.toString());
+    return updatedPlant as IPlant;
   }
 
-  removeById(id: string): Promise<boolean> {
-    throw new Error('Method not implemented.');
+  public async removeById(id: string): Promise<boolean> {
+    const plants = await this.getAll();
+    const updatedPlants = plants.filter((plant) => plant.id !== Number(id));
+
+    await fs.writeFile(this.plantsFilePath, JSON.stringify(updatedPlants, null, 2));
+
+    return true;
   }
 }
 
