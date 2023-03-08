@@ -1,0 +1,36 @@
+// ex 1
+db.bios.find({ _id: 8 });
+
+// ex 2
+db.bios.find({ _id: 8 }, { _id: 1, name: 1 });
+
+// ex 3
+db.bios.find({ _id: 8 }, { _id: 0, name: 1, birth: 1 });
+
+// ex 4
+db.bios.find({ 'name.first': 'John' }).pretty();
+
+// ex 5
+db.bios.find().limit(3).pretty();
+
+// ex 6
+db.bios.find().limit(2).skip(5);
+
+// copiar arquivo para o container
+docker cp books.json mongo-exercise:/tmp/books.json
+
+// importa arquivo para o MongoDB
+docker exec mongo-exercise mongoimport -d test -c books --file /tmp/books.json --jsonArray
+
+// ex 7
+db.books.countDocuments({});
+
+// ex 8
+db.books.countDocuments({ status: 'PUBLISH' });
+
+// ex 9
+db.books.find({}, { _id: 0, title: 1, isbn: 1, pageCount: 1 }).limit(3);
+
+// ex 10
+db.books.find({ status: 'MEAP' }, { title: 1, authors: 1, status: 1 }).skip(5).limit(10);
+
