@@ -1,0 +1,5 @@
+// ex 1
+db.restaurants.deleteOne({ cuisine: 'Ice Cream, Gelato, Yogurt, Ices' });
+
+// ex 2
+db.restaurants.deleteMany({ cuisine: 'American' });

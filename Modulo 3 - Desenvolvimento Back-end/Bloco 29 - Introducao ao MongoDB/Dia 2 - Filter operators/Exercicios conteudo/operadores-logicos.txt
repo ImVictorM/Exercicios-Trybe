@@ -1,0 +1,15 @@
+// ex 1
+db.restaurants.countDocuments({ rating: { $not: { $lte: 5 }}});
+
+// ex 2
+db.restaurants.countDocuments({ $or: [{ rating: { $gte: 6 } }, { borough: 'Brooklyn' }] });
+
+// ex 3
+db.restaurants.countDocuments({ $and: [{ borough: { $in: ['Queens', 'Staten Island', 'Brooklyn']}}, { rating: { $gt: 4 }}]});
+
+// ex 4
+db.restaurants.countDocuments({ $nor: [{ rating: { $eq: 1 } }, { cuisine: 'American' }] });
+
+// ex 5
+db.restaurants.countDocuments({ $and: [{ $or: [{ rating: { $gt: 6 } } , { rating: { $lt: 10 } }] }, { $or: [{ borough: 'Brooklyn' }, { cuisine: { $ne: 'Delicatessen' } }] } ]});
+
