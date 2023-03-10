@@ -101,3 +101,13 @@ db.movies.find({
 db.movies.find({
   description: { $regex: /^The/ }
 });
+
+// ex 13
+db.movies.find({
+  description: { $regex: /humanity.$/ }
+});
+
+// ex 14
+db.movies.find({
+  $expr: { $lt: ['$budget', '$grossWorldwide'] }
+});
