@@ -29,3 +29,44 @@ db.movies.find({
   ratings: 1
 });
 
+// ex 5
+db.movies.find({
+  ratings: { 
+    $elemMatch: { 
+      $gte: 64, 
+      $lte: 105,
+      $mod: [9, 0]
+    } 
+  }
+}, {
+  _id: 0,
+  title: 1,
+  ratings: 1
+});
+
+// ex 6
+db.movies.find({
+  ratings: { $gte: 103 },
+  category: 'adventure'
+}, {
+  _id: 0,
+  title: 1,
+  ratings: 1,
+  category: 1
+});
+
+// ex 7
+db.movies.find({
+  category: { $size: 2 }
+}, {
+  _id: 0,
+  title: 1
+});
+
+// ex 8
+db.movies.find({
+  ratings: { $size: 4 }
+}, {
+  _id: 0,
+  title: 1
+});
