@@ -30,3 +30,55 @@ db.xmen.updateMany(
   }
 );
 db.xmen.find({ class: { $in: ['omega', 'gama'] } });
+
+// ex 17
+db.xmen.updateMany(
+  { class: 'gama' },
+  {
+    $currentDate: { lastUpdated: { $type: 'timestamp' } },
+    $min: { power: 300 }
+  }
+);
+db.xmen.find({ class: 'gama' });
+
+// ex 18
+db.xmen.updateMany(
+  { class: { $exists: false } },
+  {
+    $currentDate: { lastUpdated: { $type: 'timestamp' } },
+    $inc: { power: -100 } 
+  }
+);
+db.xmen.find({ class: { $exists: false } });
+
+// ex 19
+db.xmen.updateMany(
+  { 
+    $or: [
+      { occupation: 'Senior Staff', power: { $gt: 100 } }, 
+      { occupation: 'Junior Staff', power: { $gt: 200 } }
+    ]
+  },
+  {
+    $currentDate: { lastUpdated: { $type: 'timestamp' } },
+    $set: { areas: ["Students Room"] }
+  }
+);
+
+db.xmen.find({ 
+  $or: [
+    { occupation: 'Senior Staff', power: { $gt: 100 } }, 
+    { occupation: 'Junior Staff', power: { $gt: 200 } }
+  ]
+});
+
+// ex 20
+db.xmen.updateMany(
+  { occupation: 'Junior Staff', areas: { $exists: false } },
+  { 
+    $set: { areas: ["Outside"] },
+    $currentDate: { lastUpdated: { $type: 'timestamp' } }
+  }
+);
+db.xmen.find({ occupation: 'Junior Staff' });
+
