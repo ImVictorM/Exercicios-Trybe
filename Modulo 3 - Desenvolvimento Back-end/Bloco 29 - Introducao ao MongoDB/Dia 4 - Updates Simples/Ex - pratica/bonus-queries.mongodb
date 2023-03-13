@@ -1,0 +1,32 @@
+use('class');
+
+// ex 14
+db.xmen.updateMany(
+  { class: 'unknown' },
+  { 
+    $unset: { class: '' },
+    $currentDate: { lastUpdated: { $type: 'timestamp' } }
+  }
+);
+db.xmen.find({ class: 'unknown' });
+
+// ex 15
+db.xmen.updateMany(
+  {},
+  { 
+    $rename: { name: 'hero_name', true_name: 'full_name' },
+    $set: { power: 100 },
+    $currentDate: { lastUpdated: { $type: 'timestamp' } }
+  }
+);
+db.xmen.find().limit(2);
+
+// ex 16
+db.xmen.updateMany(
+  { class: { $in: ['omega', 'gama'] } },
+  { 
+    $max: { power: 500 },
+    $currentDate: { lastUpdated: { $type: 'timestamp' } }
+  }
+);
+db.xmen.find({ class: { $in: ['omega', 'gama'] } });
