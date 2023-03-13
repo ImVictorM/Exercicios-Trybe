@@ -66,3 +66,31 @@ db.movies.updateOne(
   }
 );
 db.movies.find({ title: 'Godzilla'});
+
+// ex 10
+db.movies.updateOne(
+  { title: 'Home Alone' },
+  { $currentDate: { lastUpdated: { $type: 'timestamp' } } }
+);
+db.movies.find({ title: 'Home Alone' });
+
+// ex 11
+db.movies.updateMany(
+  {},
+  { $set: { sequels: 0 } }
+);
+db.movies.find();
+
+// ex 12
+db.movies.updateMany(
+  {},
+  { $unset: { budget: '', estimatedBudget: '' } }
+);
+db.movies.find();
+
+// ex 13
+db.movies.updateMany(
+  { title: { $in: ['Batman', 'Home Alone'] } },
+  { $max: { imdbRating: 17 } }
+);
+db.movies.find({ title: { $in: ['Batman', 'Home Alone'] } });
