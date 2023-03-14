@@ -1,0 +1,36 @@
+// ex 1
+use('cinema');
+db.movies.updateOne(
+  { title: 'Batman' },
+  { $push: { category: 'superhero' } }
+);
+db.movies.find({ title: 'Batman' });
+
+// ex 2
+use('cinema');
+db.movies.updateOne(
+  { title: 'Batman' },
+  { $push: { 
+      category: {
+        $each: ['villain','comic-based']
+      }
+    }
+  }
+);
+db.movies.find({ title: 'Batman' });
+
+// ex 3
+use('cinema');
+db.movies.updateOne(
+  { title: 'Batman' },
+  { $pull: { category: 'action' } }
+);
+db.movies.find({ title: 'Batman' });
+
+// ex 4
+use('cinema');
+db.movies.updateOne(
+  { title: 'Batman' },
+  { $pop: { category: -1 } }
+);
+db.movies.find({ title: 'Batman' });
