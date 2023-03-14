@@ -34,3 +34,54 @@ db.movies.updateOne(
   { $pop: { category: -1 } }
 );
 db.movies.find({ title: 'Batman' });
+
+// ex 5
+use('cinema');
+db.movies.updateOne(
+  { title: 'Batman' },
+  { $pop: { category: 1 } }
+);
+db.movies.find({ title: 'Batman' });
+
+// ex 6
+use('cinema');
+db.movies.updateOne(
+  { title: 'Batman' },
+  { $addToSet: { category: 'action' }  }
+);
+db.movies.find({ title: 'Batman' });
+
+// ex 7
+use('cinema');
+db.movies.updateMany(
+  { title: { $in: ['Batman', 'Home Alone'] } },
+  { $push: { category: "90's" } }
+);
+db.movies.find({ title: { $in: ['Batman', 'Home Alone'] } });
+
+// ex 8
+use('cinema');
+db.movies.updateOne(
+  { title: 'Home Alone' },
+  { 
+    $push: { 
+      cast: { 
+        $each: [
+          {
+            "actor": "Macaulay Culkin",
+            "character": "Kevin"
+          },
+          {
+            "actor": "Joe Pesci",
+            "character": "Harry"
+          },
+          {
+            "actor": "Daniel Stern"
+          }
+        ]
+      }
+    }
+  },
+  { upsert: true }
+);
+db.movies.find({ title: /home alone/i });
