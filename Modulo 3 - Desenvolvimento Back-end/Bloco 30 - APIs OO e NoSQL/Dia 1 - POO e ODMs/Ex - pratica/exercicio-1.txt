@@ -1,0 +1,2 @@
+- O que são os ODMs?
+R: ODMs (Object Relation Mappping) são ferramentas que facilitam a interação e a manipulação dos dados. São usados para lidar com dados estruturados em bancos não relacionais (NoSQL).
