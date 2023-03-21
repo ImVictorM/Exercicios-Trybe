@@ -1,0 +1,73 @@
+- O que é e para que servem os Padrões de Projeto (do inglês Design Patterns)? Quais são as três classificações/categorizações/famílias deles?
+R: Design Patterns são soluções generalistas para problemas recorrentes durante o desenvolvimento de softwares. Por serem padrões já testados, seu uso contribui no ganho de produtividade, organização e manutenção de projetos. Além disso, as discussões técnicas são facilitadas por serem padrões conhecidos.
+
+// categorizações
+
+1.Creational Patterns
+
+São padrões de criação e tratam da construção do objeto e de referência. Sustenta o princípio considerado mais essencial, que diz: programe para interface e não para implementações.
+
+Nele, constam:
+
+Abstract Factory: provê uma maneira de criar familias de objetos relacionados sem impor suas classes concretas, encapsulando um grupo de individuais "fábricas" que tem um tema em comum;
+
+Builder: Constrói o produto passo a passo;
+
+Factory Method: A construção de objetos semelhantes são realizadas por meio de uma "fabrica especializada";
+
+Prototype: Permite a criação de novos objetos a partir da cópia de um modelo original ou protótipo;
+
+Singleton: Centraliza e compartilha recursos.
+
+2. Structural Patterns
+
+São os padrões estruturais que tratam da relação entre os objetos e como eles interagem entre si para formarem objetos grandes e complexos.
+
+Ele é composto por:
+
+Adapter: Pluga o conteúdo ao sistema;
+
+Bridge: Separa implementações de abstrações em prol da flexibilidade;
+
+Composite: Trata todos os objetos de forma justa;
+
+Decorator: Incrementa funcionalidades de forma dinâmica;
+
+Facade: Simplifica a utilização de subsistemas complexos;
+
+Flyweight: Compartilha pequenos recursos para economizar espaço;
+
+Proxy: Faz com que um objeto represente outro objeto.
+
+3.Behavioral Patterns
+
+São os padrões comportamentais que tratam da comunicação entre os objetos, especialmente em termos de responsabilidade e de algoritmo.
+
+Nele, estão inseridos:
+
+Chain of Responsibility: Repassa as requisições para evitar a dependência entre um objeto receptor e o solicitante. Com isso, permite que outros objetos da cadeia tenham a oportunidade de tratar tal solicitação;
+
+Command: Transforma requisições em objetos;
+
+Interpreter: Define uma gramática e um interpretador;
+
+Iterator: Percorre um conjunto de dados independentes da implementação;
+
+Mediator: É um simplificador de relacionamentos complexos;
+
+Memento: Externaliza estados sem quebrar o encapsulamento;
+
+Observer: Realiza o compartilhamento de recursos de maneira inteligente;
+
+State: É considerado muito importante porque simplifica a troca de estados internos de objetos;
+
+Strategy: Separa os dados dos algoritmos para que possam ser reutilizados;
+
+Template Method: Define algoritmos extensíveis;
+
+Visitor: Define uma nova operação para uma classe sem alterá-la.
+
+// referências
+https://www.hostgator.com.br/blog/design-patterns-e-seus-beneficios/
+
+https://www.opus-software.com.br/design-patterns/#
