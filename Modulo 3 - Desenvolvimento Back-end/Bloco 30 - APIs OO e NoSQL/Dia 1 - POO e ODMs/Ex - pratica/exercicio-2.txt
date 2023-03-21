@@ -1,0 +1,2 @@
+- Qual a diferença entre ODM e ORM?
+R: ORMs são usadas para lidar com dados estruturados em bancos relacionais (como MySQL), enquanto ODMs lidam com dados estruturados em bancos não relacionais (como MongoDB).

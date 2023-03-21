@@ -1,0 +1,11 @@
+- Quais são os 4 pilares da programação orientada a objetos? Discorra sobre a definição de cada um deles e dê exemplos.
+R: Os quatro pilares da POO são:
+
+Abstração: abstrair na POO significa esconder os detalhes da implementação. Exemplo, não precisamos entender a raiz de todas as funções e bibliotecas que usamos, apenas entender como utilizá-las.
+
+Encapsulamento: Tem relação com os modificadores de acesso. Faz com que alguns atributos só possam ser acessados e/ou modificados dentro da classe.
+
+Herança: A herança permite que uma classe adquira as propriedades e métodos de uma outra classe. A reutilização de código é o principal benefício deste pilar.
+
+Polimorfismo: permite que comportamentos diferentes aconteçam ao chamarmoss objetos de classes filhas distintas de uma mesma super-classe.
+
