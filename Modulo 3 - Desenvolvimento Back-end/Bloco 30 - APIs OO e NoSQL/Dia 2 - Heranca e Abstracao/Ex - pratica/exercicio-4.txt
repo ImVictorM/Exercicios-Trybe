@@ -1,0 +1,12 @@
+- Dentro da família de padrões comportamentais, descreva o “Problema a ser solucionado” e o “Propósito” dos padrões Strategy e Observer
+R:
+
+// Strategy
+Permite que você defina uma familia de algorítimos, coloque cada um deles em uma classe separada e faça com que seus objetos sejam intercambiáveis. Este conceito resolve o problema de termos classes muito grandes que façam muitas coisas ao mesmo tempo, onde qualquer alteração se torna muito difícil de ser feita.
+
+// Observer
+Permite que você defina uma mecanismo de inscrição que notificará multiplos objetos sobre qualquer evento que aconteça ao objeto que está sendo observado. É um padrão muito utilizado para criar notificações pertinentes a um grupo de usuários.
+
+// referências
+https://refactoring.guru/design-patterns/strategy
+https://refactoring.guru/design-patterns/observer
