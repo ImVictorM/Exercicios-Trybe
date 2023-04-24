@@ -1,0 +1,14 @@
+- Dentro da família de padrões estruturais, descreva o “Problema a ser solucionado” e o “Propósito” dos padrões Adapter e Facade
+R: 
+
+// Adapter
+Permite objetos com interfaces incompatíveis colaborarem. Consiste em converter a interface de um objeto para que outra objeto possa entende-lo. Ajuda na migração de uma tecnologia para outra.
+
+// Facade
+Provê uma interface simplificada para uma biblioteca, framework ou qualquer outro conjunto de classes. Essa técnica diminui o acoplamento a código de terceiros ao core do seu código. Consiste em criar uma classe específica que irá lidar com as particularidades da biblioteca que você irá utilizar, utilizando apenas o necessário da lib para implementar no seu código.
+
+// referência
+
+https://refactoring.guru/design-patterns/adapter
+
+https://refactoring.guru/design-patterns/facade

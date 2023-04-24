@@ -1,0 +1,15 @@
+- Dentro da família de padrões criacionais, descreva o “Problema a ser solucionado” e o “Propósito” dos padrões Singleton e Factory Method.
+R: 
+// Singleton
+
+Singleton especifica que apenas uma instância da classe pode existir, e esta será utilizada por toda a aplicação. Dessa forma temos apenas um ponto de acesso central a esta instância da classe.
+Ao utilizar o padrão Singleton, temos mais controle sobre o acesso às propriedades e métodos de uma classe, e também reduzimos o consumo de memória desnecessário por utilizar várias instancias desnecessárias de uma classe.
+
+// Factory Method
+Provê uma interface para criar objetos em uma superclasse, mas permite subclasses de alterar o tipo do objeto que será criado. Esse tipo de padrão reduz o acoplamento a uma classe específica e viabiliza um local central para criação de cada classe.
+
+
+// referência
+
+https://www.opus-software.com.br/singleton-design-pattern/
+https://refactoring.guru/design-patterns/factory-method
