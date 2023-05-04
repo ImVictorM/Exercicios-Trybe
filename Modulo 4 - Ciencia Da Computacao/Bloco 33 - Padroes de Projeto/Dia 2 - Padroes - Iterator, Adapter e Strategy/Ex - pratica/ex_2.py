@@ -7,7 +7,7 @@ class Carta:
         return "<%s de %s>" % (self.valor, self.naipe)
 
 
-class CartaIterator:
+class BaralhoIterator:
     def __init__(self, cartas) -> None:
         self.cartas = cartas
         self.controlador = 0
@@ -37,9 +37,24 @@ class Baralho:
         return len(self._cartas)
 
     def __iter__(self):
-        return CartaIterator(self._cartas)
+        return BaralhoIterator(self._cartas)
 
 
-b = Baralho()
-for carta in b:
-    print(carta)
+class BaralhoInversoIterator:
+    def __init__(self, cartas) -> None:
+        self.cartas = cartas
+        self.controlador = len(self.cartas) - 1
+
+    def __next__(self):
+        try:
+            carta_corrente = self.cartas[self.controlador]
+        except IndexError:
+            raise StopIteration()
+        else:
+            self.controlador -= 1
+            return carta_corrente
+
+
+class BaralhoInverso(Baralho):
+    def __iter__(self):
+        return BaralhoInversoIterator(self._cartas)
