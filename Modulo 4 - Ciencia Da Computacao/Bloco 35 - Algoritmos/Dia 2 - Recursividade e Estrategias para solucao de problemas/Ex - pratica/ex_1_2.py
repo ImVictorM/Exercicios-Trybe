@@ -8,4 +8,11 @@ def count_even(n):
     return even_count
 
 
-print(count_even(10))
+def rec_count_even(n):
+    if n == 1:
+        return 0
+    else:
+        if n % 2 == 0:
+            return 1 + rec_count_even(n - 1)
+
+        return rec_count_even(n - 1)
