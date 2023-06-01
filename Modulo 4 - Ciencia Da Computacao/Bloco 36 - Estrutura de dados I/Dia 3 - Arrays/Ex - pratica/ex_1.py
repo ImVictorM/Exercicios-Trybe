@@ -4,19 +4,19 @@ def calc_stability(results: list[bool]):
 
     left = 0
     right = left + 1
-    occurrences = 1
+    current_occurrences = 1
 
     while left <= max_time_without_instabilities:
         if results[left] == results[right]:
             right += 1
-            occurrences += 1
+            current_occurrences += 1
         else:
             left = right
             right = left + 1
-            occurrences = 1
+            current_occurrences = 1
 
-        if occurrences > max_time_without_instabilities:
-            max_time_without_instabilities = occurrences
+        if current_occurrences > max_time_without_instabilities:
+            max_time_without_instabilities = current_occurrences
 
     return max_time_without_instabilities
 
