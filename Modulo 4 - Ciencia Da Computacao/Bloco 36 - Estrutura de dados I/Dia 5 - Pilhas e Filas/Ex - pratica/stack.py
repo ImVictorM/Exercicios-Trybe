@@ -33,6 +33,13 @@ class Stack:
     def is_empty(self):
         return not len(self)
 
+    def min_value(self):
+        # complexidade O(n)
+        return min(
+            self.data.get_element_at(i).value
+            for i in range(len(self.data))
+        )
+
 
 s = Stack()
 print(s.is_empty())
@@ -43,4 +50,5 @@ s.push(3)
 s.pop()
 print(s)
 print(s.peek())
+print(s.min_value())
 print(s.is_empty())
