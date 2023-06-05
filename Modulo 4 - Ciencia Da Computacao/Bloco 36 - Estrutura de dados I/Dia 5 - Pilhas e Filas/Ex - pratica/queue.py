@@ -27,16 +27,21 @@ class Queue:
         return removed
 
     def peek(self):
-        return self.data.get_element_at(0)
+        return self.data.get_element_at(0).value
 
     def is_empty(self):
         return not len(self.data)
 
 
 q = Queue()
+print(q.is_empty())
 q.enqueue(1)
 q.enqueue(4)
 q.enqueue(6)
 q.enqueue(1)
 q.enqueue(7)
 print(q)
+q.dequeue()
+print(q)
+print(q.peek())
+print(q.is_empty())
