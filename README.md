@@ -4,7 +4,7 @@ Este repositório contém todas os exercícios desenvolvidas por [mim](https://w
 
 - [x] Fundamentos do Desenvolvimento Web
 - [x] Desenvolvimento Front-end
-- [ ] Desenvolvimento Back-end
+- [x] Desenvolvimento Back-end
 - [ ] Ciência da computação
 
 
