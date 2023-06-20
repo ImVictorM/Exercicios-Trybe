@@ -73,4 +73,4 @@
 - [x] Dia 3 - [Projeto - Car Shop](https://github.com/ImVictorM/Auto-Shop)
 
 ### Bloco 31 - Projeto - App de Delivery
-- [x] Dia 1 - Projeto - App de Delivery
+- [x] Dia 1 - [Projeto - App de Delivery](https://github.com/ImVictorM/Dona-Birita)
