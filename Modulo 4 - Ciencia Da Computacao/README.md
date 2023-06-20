@@ -33,7 +33,7 @@
 - [x] Dia 6 - [Projeto - TING](https://github.com/ImVictorM/Ting)
 
 ### Bloco 37 - Estrutura de Dados II: Hashmaps e Sets
-- [ ] Dia 1 - Hashmap e Dict
-- [ ] Dia 2 - Set
-- [ ] Dia 3 - Pandas
-- [ ] Dia 4 - Projeto - Restaurant Orders
+- [x] Dia 1 - Hashmap e Dict
+- [x] Dia 2 - Set
+- [x] Dia 3 - Pandas
+- [x] Dia 4 - [Projeto - Restaurant Orders](https://github.com/ImVictorM/Restaurant-Orders)
